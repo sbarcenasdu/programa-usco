@@ -1,0 +1,250 @@
+[
+    {
+        "id": 1,
+        "description": "Prevenir, diagnosticar, tratar y rehabilitar la enfermedad colaborando con grupos de estudio, investigación o tratamiento"
+    },
+    {
+        "id": 2,
+        "description": "Ayudar a la sociedad a mejorar sus condiciones de salud, a nivel individual y colectivo."
+    },
+    {
+        "id": 3,
+        "description": "Cuidar la salud de las personas, prevenir enfermedades y promover hábitos y estilos de vida saludable"
+    },
+    {
+        "id": 4,
+        "description": "Trabajar en clínicas, hospitales, instituciones educativas, o en residencias de personas que requieran cuidados de salud"
+    },
+    {
+        "id": 5,
+        "description": "Diseñar actividades administrativas para proyectar decisiones financieras acertadas"
+    },
+    {
+        "id": 6,
+        "description": "Liderar procesos económicos y promover un equilibrio funcional en los flujos financieros"
+    },
+    {
+        "id": 7,
+        "description": "Crear sistemas logísticos, innovación y finanzas para el desarrollo económico y empresarial"
+    },
+    {
+        "id": 8,
+        "description": "Facilidad para los negocios, habilidades logísticas y la administración de los recursos"
+    },
+    {
+        "id": 9,
+        "description": "Conocer la evaluación de riesgos, oportunidades económicas y aseguramiento de la información contable"
+    },
+    {
+        "id": 10,
+        "description": "Trabajar con grupos financieros, económicos o bancarios, departamentos de cartera, contabilidad y administración financiera"
+    },
+    {
+        "id": 11,
+        "description": "Analizar la gestión de inversión, financiación y de administración de activos para generar valor."
+    },
+    {
+        "id": 12,
+        "description": "Formular estrategias de toma de decisiones efectivas con habilidades de medición, análisis y gestión de riesgo financiero"
+    },
+    {
+        "id": 13,
+        "description": "Desarrollar estructuras de marketing según los distintos segmentos de mercado, y organización de eventos en el sector de las agencias de viaje, congresos y convenciones"
+    },
+    {
+        "id": 14,
+        "description": "Direccionar empresas turísticas, analizando las estrategias de comiercialización de productos y/o servicios turísticos"
+    },
+    {
+        "id": 15,
+        "description": "Crear políticas y proyectos de comunicación para el mejoramiento de los conflictos comunicativos en entornos socioculturales"
+    },
+    {
+        "id": 16,
+        "description": "Trabajar medios de información y departamentos de gestión comunicativa"
+    },
+    {
+        "id": 17,
+        "description": "Desarrollar procesos de atención psicológica a nivel grupal y personalizado"
+    },
+    {
+        "id": 18,
+        "description": "Entender la vida mental y afectiva y los comportamientos humanos para mejorar la calidad de vida individual o colectiva"
+    },
+    {
+        "id": 19,
+        "description": "Capacidad de observar, describir e interpretar la diversidad social y cultural, pasada y presente, la riqueza patrimonial que existe en la región y el país."
+    },
+    {
+        "id": 20,
+        "description": "Competencias investigativas para comprender e interpretar las dinámicas sociales, nuestro entorno y contextos."
+    },
+    {
+        "id": 21,
+        "description": "Cumplir y hacer cumplir las normas legales y constitucionales acusando o defendiendo, como representante de otras personas"
+    },
+    {
+        "id": 22,
+        "description": "Realizar trámites legales, documentos, citaciones, evidencias, declaraciones, conflictos, conciliaciones, cortes de justicia, etc."
+    },
+    {
+        "id": 23,
+        "description": "Entender los asuntos relacionados con el estado y el gobierno público"
+    },
+    {
+        "id": 24,
+        "description": "Desempeñarme en cargos públicos y políticos, asambleas, concejos, secretarías de gobierno, ministerios, embajadas etc."
+    },
+    {
+        "id": 25,
+        "description": "Entender el mundo desde modelos, métodos y técnicas de las matemáticas"
+    },
+    {
+        "id": 26,
+        "description": "Laborar en empresas, instituciones educativas o procesos industriales utilizando aplicaciones matemáticas"
+    },
+    {
+        "id": 27,
+        "description": "Asesorar diversos aspectos desde la física y las matemáticas, ya sea en la industria, en la ciencia y la tecnología, o desde el ámbito académico e investigativo"
+    },
+    {
+        "id": 28,
+        "description": "Trabajar en industrias, instituciones académicas, laboratorios y grupos de investigación en torno a la física"
+    },
+    {
+        "id": 29,
+        "description": "Solucionar problemáticas en recursos hidrobiológicos y ecológicos"
+    },
+    {
+        "id": 30,
+        "description": "Desarrollo de consultorías e interventorías en áreas ambientales"
+    },
+    {
+        "id": 31,
+        "description": "Desarrollar programas, investigaciones, docencia o asesorías pedagógicas en el idioma inglés"
+    },
+    {
+        "id": 32,
+        "description": "Tener fluidez expresiva y facilidad oral y escrita para comunicarme en lengua materna o lengua inglesa extranjera, y ayudar a otros a lograrlo"
+    },
+    {
+        "id": 33,
+        "description": "Trabajar en entornos académicos, entidades sociales y culturales en torno al lenguaje, la literatura y la lengua castellana"
+    },
+    {
+        "id": 34,
+        "description": "Entender la comprensión y producción de textos orales y escritos de la lengua castellana"
+    },
+    {
+        "id": 35,
+        "description": "Identificar los fenómenos de la naturaleza, la biología y los ecosistemas ambientales"
+    },
+    {
+        "id": 36,
+        "description": "Enseñar ciencias naturales, biología y ciencias ambientales, o apoyar procesos de adaptación, aplicación o investigación pedagógicas, curriculares y metodológicas del área de las ciencias naturales."
+    },
+    {
+        "id": 37,
+        "description": "Desempeñarme en entidades deportivas, educativas y sociales mediante el desarrollo deportivo y fomento de la actividad física"
+    },
+    {
+        "id": 38,
+        "description": "Desarrollar claridad conceptual y teórica sobre el funcionamiento productivo y deportivo del cuerpo humano, y saber enseñarlo de manera pedagógica y recreativa para su ejercitación y aprendizaje"
+    },
+    {
+        "id": 39,
+        "description": "Desarrollar procesos pedagógicos, artísticos y culturales en contextos educativos y comunitarios"
+    },
+    {
+        "id": 40,
+        "description": "Conocer las diversas teorías, técnicas y conceptos de las artes y la cultura"
+    },
+    {
+        "id": 41,
+        "description": "Identificar aspectos pedagógicos, psicológicos, sociales, familiares y culturales en el aprendizaje de los niños"
+    },
+    {
+        "id": 42,
+        "description": "Contribuir al mejoramiento de las realidades de la población infantil a nivel regional y nacional"
+    },
+    {
+        "id": 43,
+        "description": "Comprender claramente los asuntos simples y complejos de las matemáticas y conocer los métodos para su enseñanza y aprendizaje educativos"
+    },
+    {
+        "id": 44,
+        "description": "Orientar a los estudiantes para mejorar sus procesos de aprendizaje y comprensión de las matemáticas en diversos niveles de escolaridad"
+    },
+    {
+        "id": 45,
+        "description": "Ejercer la docencia en el área de las ciencias sociales de acuerdo al desarrollo cognitivo, físico, psicológico y cultural de los estudiantes"
+    },
+    {
+        "id": 46,
+        "description": "Dar cuenta de los dilemas sociales básicos a nivel regional, nacional e internacional, y diseñar modelos de solución a partir del trabajo disciplinar y del desarrollo de proyectos pedaógicos institucionales"
+    },
+    {
+        "id": 47,
+        "description": "Entender los fundamentos teóricos de la agronomía y aprender las técnicas y estrategias prácticas para la planeación, control y evaluación de unidades agrícolas productivas"
+    },
+    {
+        "id": 48,
+        "description": "Proporcionar servicio profesional a diversos agentes del campo agrario, para mejorar sus técnicas y procedimientos de producción y cuidado"
+    },
+    {
+        "id": 49,
+        "description": "Conocer el proceso de producción, conservación, transformación y comercialización de materias primas de origen biológico, con aplicaciones alimentarias y no alimentarias."
+    },
+    {
+        "id": 50,
+        "description": "Laborar en empresas del sector agroindustrial con capacidad de dirección técnica, administrativa y financiera."
+    },
+    {
+        "id": 51,
+        "description": "Conocer elementos electrónicos-físicos-matemáticos para la creación de nuevas tecnologías automatizadas y digitales"
+    },
+    {
+        "id": 52,
+        "description": "Desarrollar tecnologías de bioingeniería, microelectrónica, robótica, telemática y automatización de herramientas electrónicas"
+    },
+    {
+        "id": 53,
+        "description": "Ampliar conocimientos en el área de química, minerales, manejo de hidrocarburos y los procesos de extracción y producción de petróleo y sus derivados"
+    },
+    {
+        "id": 54,
+        "description": "Ejecutar y asesorar proyectos petroleros que impliquen la aplicación del conocimiento técnico y científico en la perforación de pozos y yacimientos, en el procesamiento del crudo y demás procesos industriales"
+    },
+    {
+        "id": 55,
+        "description": "Liderar, desarrollar e implementar proyectos de sistematización, informática, automatización de procesos y proyectos de desarrollo del software"
+    },
+    {
+        "id": 56,
+        "description": "Comprender todos los elementos técnicos y conceptuales relacionados con el manejo de la programación de los sistemas informáticos y computacionales"
+    },
+    {
+        "id": 57,
+        "description": "Llevar a cabo la realización tangible de propuestas arquitectónicas y diseños para la construcción"
+    },
+    {
+        "id": 58,
+        "description": "Ejecutar propuestas de construcción y edificación civil, diagnóstico, análisis y diseño, consultoría, interventoría, dirección y administración de proyectos"
+    },
+    {
+        "id": 59,
+        "description": "Conocer las técnicas y procedimientos para la implantación de proyectos de sistematización, automatización de procesos y proyectos multimediales"
+    },
+    {
+        "id": 60,
+        "description": "Asesorar en el montaje y mantenimiento de servicios informáticos, producción de software y comercialización de equipos y suministros"
+    },
+    {
+        "id": 61,
+        "description": "Laborar alrededor de obras de construcción, diseños, planos y materiales para edificar"
+    },
+    {
+        "id": 62,
+        "description": "Ejecutar propuestas de construcción y edificación civil, en obras públicas o particulares"
+    }
+]

@@ -1,0 +1,50 @@
+<!-- <p>home works!</p>
+<p>home works!</p>
+<p>home works!</p>
+<button type="button" class="btn btn-primary" (click)="login()">login</button>
+
+<a routerLink="survey">
+    <button type="button" class="btn btn-primary">Encuesta</button>
+</a> -->
+
+<div class="container px-4 py-5 bg-white">
+    <h2 class="pb-2 border-bottom fw-semibold">¡Bienvenido a la Universidad Surcolombiana!</h2>
+
+    <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+        <div class="d-flex flex-column align-items-start gap-2 ">
+            <p class="text-dark" style="text-align: justify">Si estás interesado en ingresar a la Universidad
+                Surcolombiana y deseas saber si tu puntaje en las pruebas ICFES te permite cumplir con los requisitos de
+                admisión, te ofrecemos la opción de utilizar nuestro Simulador de Ponderaciones. <br><br> Además, si
+                deseas descubrir cuál es tu vocación profesional, puedes hacer uso de nuestro Programa de Orientación
+                Profesional, que te permitirá conocer las áreas de estudio que mejor se ajustan a tus gustos y
+                habilidades. Recuerda que nuestros servicios en línea son solo una herramienta de ayuda para los
+                estudiantes que desean ingresar a nuestra institución.</p>
+                <!-- <a href="#" class="btn btn-secondary">Ver resultados</a> -->
+                <a routerLink="../login" class="mt-3">Administrador</a>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 g-4">
+            <!-- <div class="d-flex flex-column gap-2"> -->
+            <!-- <a routerLink="simulator" class="text-decoration-none"> -->
+            <a href="https://usco-front.herokuapp.com/" class="text-decoration-none">
+                <div class="card shd-card text-dark mb-3" style="max-width: 18rem;
+                background-color: rgb(196,227,232)">
+                    <div class="card-header fw-semibold">Simulador de Ponderaciones</div>
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Ingresa tus puntajes ICFES y descubre tu puntaje ponderado.</p>
+                    </div>
+                </div>
+            </a>
+            <a routerLink="../register" class="text-decoration-none">
+                <div class="card shd-card text-dark mb-3" style="max-width: 18rem;
+                background-color: rgb(196,227,232);">
+                    <div class="card-header fw-semibold">Programa de Orientación Profesional</div>
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Responde una encuesta y conoce tu interés vocacional.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
