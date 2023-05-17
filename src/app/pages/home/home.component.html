@@ -20,7 +20,7 @@
                 habilidades. Recuerda que nuestros servicios en línea son solo una herramienta de ayuda para los
                 estudiantes que desean ingresar a nuestra institución.</p>
                 <!-- <a href="#" class="btn btn-secondary">Ver resultados</a> -->
-                <a routerLink="../login" class="mt-3">Administrador</a>
+                <a routerLink="../login" class="mt-3" (click)="roleVerification('admin')">Administrador</a>
         </div>
         <div class="row row-cols-1 row-cols-sm-2 g-4">
             <!-- <div class="d-flex flex-column gap-2"> -->
@@ -41,7 +41,8 @@
                     <div class="card-header fw-semibold">Programa de Orientación Profesional</div>
                     <div class="card-body">
                         <h5 class="card-title"></h5>
-                        <p class="card-text">Responde una encuesta y conoce tu interés vocacional.</p>
+                        <p class="card-text">Responde una encuesta y conoce tu interés vocacional. O click
+                            <a class="fw-semibold" routerLink="../login" (click)="roleVerification('SD')">aqui</a> para ver tus resultados</p>
                     </div>
                 </div>
             </a>

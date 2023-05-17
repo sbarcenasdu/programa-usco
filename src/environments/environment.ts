@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    URL_API: 'api'
+    URL_API: 'https://apimocha.com/dibranet/'
 };

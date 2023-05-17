@@ -1,27 +1,3 @@
-<!-- <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-<!-- <div class="form-signin d-flex justify-content-center m-auto">
-    <form>
-        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-        <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
-        </div>
-        <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
-        </div>
-
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
-        </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017-2022</p>
-    </form>
-</div> -->
-
 <div class="bg-usco-red" style="height: 100vh;">
     <div class="container">
         <div class="row justify-content-center">
@@ -35,15 +11,21 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Bienvenido!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form [formGroup]="loginForm" class="user" (submit)="login()">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Ingrese correo electronico">
+                                                formControlName="email" placeholder="Correo electrónico">
+                                            <div class="text-danger">
+                                                <small *ngIf="campoNoValido('email')">*El correo es obligatorio</small>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Contraseña">
+                                                formControlName="password" placeholder="Contraseña">
+                                            <div class="text-danger">
+                                                <small *ngIf="campoNoValido('password')">*La contraseña es
+                                                    obligatoria</small>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -52,11 +34,17 @@
                                                     datos</label>
                                             </div>
                                         </div>
-                                        <a href="#"
+                                        <button type="submit"
                                             class="btn bg-usco-blue1 btn-user btn-block text-white fw-semibold fs-6">
                                             Ingresar
-                                        </a>
+                                        </button>
                                     </form>
+
+                                    <a routerLink="../home" class="text-decoration-none">
+                                        <button class="btn bg-secondary password btn-block text-white fw-semibold fs-6 my-3">
+                                            Volver
+                                        </button>
+                                    </a>
                                     <hr>
                                     <!-- <div class="text-center">
                                         <a class="small" href="#">Crear cuenta!</a>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -7,14 +8,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-constructor(
-  private router: Router
-){
+  constructor(
+    private router: Router,
+    private authSrv: AuthService
+  ) {
 
-}
-
-  login(){
-    this.router.navigateByUrl('/login');
+  }
+  roleVerification(role: any) {
+    if (role == 'SD') {
+      this.authSrv.isSD = true;
+      this.authSrv.isAdmin = false;
+    }
+    else {
+      this.authSrv.isAdmin = true;
+      this.authSrv.isSD = false;
+    }
   }
 
 }
