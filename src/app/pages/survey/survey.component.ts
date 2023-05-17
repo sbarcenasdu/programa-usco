@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SurveyService } from 'src/app/services/survey.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-survey',
@@ -17,23 +19,32 @@ export class SurveyComponent {
   public surveyForm = this.fb.group({
   });
 
-  constructor(private fb: FormBuilder, private surveySrv: SurveyService) { }
+  constructor(private fb: FormBuilder, private surveySrv: SurveyService, private router: Router) { }
 
-  public registerSurvey() {
-    this.surveySrv.realiceSurvey(this.surveyForm.value);
+  // public registerSurvey() {
+  //   this.surveySrv.realiceSurvey(this.surveyForm.value);
+  // }
+
+  registerSurvey() {
+    const transformedData = Object.values(this.surveyForm.value).map((value: any) => {
+      const { question, option, program } = value;
+      return { pregunta: question, respuesta: 5 - parseFloat(option), carrera: program };
+    });
+    this.surveySrv.realiceSurvey(transformedData);//no se si queda pendiente a respuesta del api
+    console.log('Encuesta registrada correctamente.');
+    // this.router.navigateByUrl('/charts');
+    this.router.navigate(['/home/charts']);
   }
 
   loadQuestions() {
     this.surveySrv.loadJSON().subscribe(data => {
       this.questions = data;
       this.questions.forEach((question: { required: any; }, index: number) => {
-        const fieldName = `pregunta${index + 1}`;
+        const fieldName = `question${index + 1}`;
         const validators = question.required ? [Validators.required] : [];
         this.surveyForm.addControl(fieldName, this.fb.control('', validators));
       });
     });
-
-
   }
 }
 

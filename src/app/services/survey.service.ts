@@ -6,16 +6,18 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class SurveyService {
 
-  constructor(private http:HttpClient) { }
-  
-  loadJSON(): Observable<any> {    
+  constructor(private http: HttpClient) { }
+
+  loadJSON(): Observable<any> {
     return this.http.get<any>('assets/questions.json');
   }
 
-  realiceSurvey(formData: any){
-  localStorage.setItem('survey', JSON.stringify(formData));
-
+  realiceSurvey(formData: any) {
+    localStorage.setItem('survey', JSON.stringify(formData));
+    console.log(formData);
   }
+
 }
