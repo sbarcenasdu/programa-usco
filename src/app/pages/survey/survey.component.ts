@@ -10,12 +10,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./survey.component.css']
 })
 export class SurveyComponent {
+  p: number = 1;
   public questions: any = [];
+  pageSize: number = 10;
+  totalPages: number = 0;
+  totalQuestions: number = 0;
+  selectedOptions: any[] = [];
 
+  importantInfo: boolean = true;
+  
+  continueTest(){
+    this.importantInfo = false;
+  }
+
+
+  public getTotalPages() {
+    return Math.ceil(this.questions.length / this.pageSize);
+  }
+  
+  
+  
   ngOnInit() {
     this.loadQuestions();
   }
-
+  
   public surveyForm = this.fb.group({
   });
 
@@ -44,6 +62,8 @@ export class SurveyComponent {
         const validators = question.required ? [Validators.required] : [];
         this.surveyForm.addControl(fieldName, this.fb.control('', validators));
       });
+      this.totalPages = this.getTotalPages();
+      this.totalQuestions = this.questions.length;
     });
   }
 }

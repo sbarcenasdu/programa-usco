@@ -58,8 +58,11 @@
     background-position: center;
 }
 
-.bg-usco-red{
+.bg-usco-redwine{
     background-color: rgb(198,140,142);
+}
+.bg-usco-red{
+    background-color: rgb(223, 89, 94);
 }
 
 .bg-usco-blue{

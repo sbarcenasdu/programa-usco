@@ -11,9 +11,8 @@ export class HomeComponent {
   constructor(
     private router: Router,
     private authSrv: AuthService
-  ) {
-
-  }
+  ) {}
+  
   roleVerification(role: any) {
     if (role == 'SD') {
       this.authSrv.isSD = true;

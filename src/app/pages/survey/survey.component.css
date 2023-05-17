@@ -115,8 +115,11 @@
 
 /* personal */
 
+.question {
+  max-width: 50rem;
+}
 @media (min-width: 756px) {
   .question {
-    min-width: 30rem;
+    min-width: 28rem;
   }
 }

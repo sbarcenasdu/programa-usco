@@ -12,7 +12,7 @@ export class SurveyService {
   constructor(private http: HttpClient) { }
 
   loadJSON(): Observable<any> {
-    return this.http.get<any>('assets/questions.json');
+    return this.http.get<any>('assets/questionsC.json');
   }
 
   realiceSurvey(formData: any) {

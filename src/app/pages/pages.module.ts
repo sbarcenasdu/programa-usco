@@ -11,6 +11,8 @@ import { SharedModule } from '../shared/shared.module';
 import { SurveyComponent } from './survey/survey.component';
 import { SimulatorComponent } from './simulator/simulator.component';
 import { ChartsComponent } from './charts/charts.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ImportantInfoComponent } from './important-info/important-info.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { ChartsComponent } from './charts/charts.component';
     SurveyComponent,
     SimulatorComponent,
     ChartsComponent,
+    ImportantInfoComponent,
   ],
   imports: [
     CommonModule,
@@ -27,7 +30,8 @@ import { ChartsComponent } from './charts/charts.component';
     SharedModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   exports: [
     PagesComponent
