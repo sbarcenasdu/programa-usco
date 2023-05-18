@@ -22,11 +22,13 @@ export class AuthService {
 
   public login = (formData: any) => {
     const json = {
-      email: formData.User,
-      password: formData.Password
+      userEmail: formData.email,
+      password: formData.password
     }
-    return this.http.post(`${BASE_URL}/login`, json, this.httpOptions).pipe(
+    return this.http.post(`${BASE_URL}/v1/user/autenticar`, json, this.httpOptions).pipe(
       map(resp => resp)
     )
   }
+
+  
 }

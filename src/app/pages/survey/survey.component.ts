@@ -17,23 +17,14 @@ export class SurveyComponent {
   totalQuestions: number = 0;
   selectedOptions: any[] = [];
 
-  importantInfo: boolean = true;
-  
-  continueTest(){
-    this.importantInfo = false;
-  }
-
-
   public getTotalPages() {
     return Math.ceil(this.questions.length / this.pageSize);
   }
-  
-  
-  
+
   ngOnInit() {
     this.loadQuestions();
   }
-  
+
   public surveyForm = this.fb.group({
   });
 
@@ -46,16 +37,15 @@ export class SurveyComponent {
   registerSurvey() {
     const transformedData = Object.values(this.surveyForm.value).map((value: any) => {
       const { question, option, program } = value;
-      return { pregunta: question, respuesta: 5 - parseFloat(option), carrera: program };
+      return { carrera: program, puntaje: 5 - parseFloat(option) };
     });
-    this.surveySrv.realiceSurvey(transformedData);//no se si queda pendiente a respuesta del api
-    console.log('Encuesta registrada correctamente.');
-    // this.router.navigateByUrl('/charts');
-    this.router.navigate(['/home/charts']);
+    this.surveySrv.realiceSurvey(transformedData);
+
+    // this.router.navigate(['/home/charts']);
   }
 
   loadQuestions() {
-    this.surveySrv.loadJSON().subscribe(data => {
+    this.surveySrv.loadJSON().subscribe((data: any) => {
       this.questions = data;
       this.questions.forEach((question: { required: any; }, index: number) => {
         const fieldName = `question${index + 1}`;
@@ -66,5 +56,7 @@ export class SurveyComponent {
       this.totalQuestions = this.questions.length;
     });
   }
+
+
 }
 

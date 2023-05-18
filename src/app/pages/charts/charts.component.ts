@@ -10,7 +10,8 @@ export class ChartsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    const data = this.getValuesLocalStorage();
+    // const data = this.getValues();
+    const data = [0.5, 0.5, 1.5, 0.5, 3.5]
     const densityCanvas = document.getElementById("afinityChart") as HTMLCanvasElement;
     const densityData = {
       label: 'Afinidad de las carreras',

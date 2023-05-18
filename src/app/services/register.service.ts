@@ -15,12 +15,14 @@ export class RegisterService {
 
   public registerUser(formData: any){ 
     const json = {
-      name: formData.name,
-      email: formData.email,
-      cellphone: formData.cellphone,
-      document: formData.document
+      userName: formData.name,
+      userEmail: formData.email,
+      userDocument: formData.document,
+      cellphone: formData.phoneNumber,
+      role:"",
+      password: formData.password
     }
-    return this.http.post(`${URL}/users`, json).pipe(
+    return this.http.post(`${URL}/v1/user`, json).pipe(
      map(resp => resp));
   }
 }

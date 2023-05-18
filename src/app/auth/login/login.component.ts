@@ -36,21 +36,27 @@ export class LoginComponent implements OnInit {
     }
     this.btnLoading = true;
     this.authSrv.login(this.loginForm.value).subscribe((resp: any) => {
-      if (this.authSrv.isSD) {
-        this.authSrv.isSD = false;
-        this.router.navigateByUrl('/home/charts');
+      if (resp.length === 0) {
+        Swal.fire('Error', 'Credenciales incorrectas', 'error');
+        this.btnLoading = false;
+      } else {
+        if (this.authSrv.isSD) {
+          this.authSrv.isSD = false;
+          this.router.navigateByUrl('/home/charts');
+        }
+        else {
+          // this.router.navigateByUrl('/home/adminCharts');
+          Swal.fire('Éxito', 'Inicio de sesión exitoso', 'success');
+        }
       }
-      else {
-        this.router.navigateByUrl('/home');
-      }
-        
-      
-
     }, (err) => {
       Swal.fire('Error', 'Error al iniciar sesión', 'error');
       this.btnLoading = false;
     })
   }
+
+
+
 
   public campoNoValido(campo: string): boolean {
     if (this.loginForm.get(campo)?.invalid && this.loginForm.get(campo)?.touched) {
