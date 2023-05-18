@@ -15,8 +15,13 @@ export class SurveyService {
 
   constructor(private http: HttpClient) { }
 
+  porcentajes: any[] = [];
+  carreras: any[] = [];
+  dataSurvey: any;
+  userDocument: any;
+
   loadJSON(): Observable<any> {
-    return this.http.get<any>('assets/questions.json');
+    return this.http.get<any>('assets/questionsC.json');
   }
 
   realiceSurvey(formData: any) {
@@ -24,15 +29,10 @@ export class SurveyService {
       carrera: data.carrera,
       puntaje: data.puntaje
     }));
-    console.log(json);
-    return;
-    return this.http.post(`${URL}/v1/data/masive/${formData.userID}`, json).pipe(
+    //const userDocument = window.localStorage.getItem('userDocument');
+    console.log(this.userDocument);
+    return this.http.post(`${URL}/v1/data/masive/${this.userDocument}`, json).pipe(
       map(resp => resp)
     );
   }
-  
-
-
-
-
 }

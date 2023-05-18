@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
+import { SurveyService } from 'src/app/services/survey.service';
 
 @Component({
   selector: 'app-charts',
@@ -7,18 +8,24 @@ import Chart from 'chart.js/auto';
   styleUrls: ['./charts.component.css']
 })
 export class ChartsComponent implements OnInit {
-  constructor() { }
+  constructor(private surveySrv: SurveyService) { }
+
+  public porcentajes: any;
+  public carreras: any;
+  public dataSurvey: any;
 
   ngOnInit() {
     // const data = this.getValues();
-    const data = [0.5, 0.5, 1.5, 0.5, 3.5]
+    this.porcentajes = this.surveySrv.porcentajes;
+    this.carreras = this.surveySrv.carreras;
+    this.dataSurvey = this.surveySrv.dataSurvey;
     const densityCanvas = document.getElementById("afinityChart") as HTMLCanvasElement;
     const densityData = {
       label: 'Afinidad de las carreras',
-      data: data,
+      data: this.porcentajes,
       backgroundColor: 'rgba(0, 123, 255, 0.6)'
     };
-    this.renderChart(densityCanvas, densityData, data);
+    this.renderChart(densityCanvas, densityData, this.porcentajes);
 
   }
 
@@ -53,8 +60,8 @@ export class ChartsComponent implements OnInit {
           'ADM. EMPRESAS',
           'CONT. PÚBLICA',
           'ADM. FINANCIERA',
-          'ADM. TURÍSTICA Y HOTELERA',
-          'COM. SOCIAL Y PERIODISMO',
+          'ADM. TURÍSTICA',
+          'COM. SOCIAL',
           'PSICOLOGÍA',
           'ANTROPOLOGÍA',
           'DERECHO',
@@ -62,10 +69,10 @@ export class ChartsComponent implements OnInit {
           'MAT. APLICADA',
           'FÍSICA',
           'BIOLOGÍA APLICADA',
-          'LIC. LENGUAS EXTRANJERAS - INGLÉS',
-          'LIC. LITERATURA Y LENGUA CASTELLANA',
-          'LIC. C. NATURALES Y ED. AMBIENTAL',
-          'LIC. ED. FÍSICA, RECREACIÓN Y DEPORTES',
+          'LIC. INGLÉS',
+          'LIC. LITERATURA',
+          'LIC. C. NATURALES',
+          'LIC. ED. FÍSICA',
           'LIC. ED. ARTÍSTICA',
           'LIC. ED. INFANTIL',
           'LIC. MATEMÁTICAS',
@@ -77,7 +84,7 @@ export class ChartsComponent implements OnInit {
           'ING. SOFTWARE',
           'ING. CIVIL',
           'TEC. DES. SOFTWARE',
-          'TEC. CONST. OBRAS CIVILES'
+          'TEC. CONST. CIVILES'
         ]
         ,
         datasets: [chartData]

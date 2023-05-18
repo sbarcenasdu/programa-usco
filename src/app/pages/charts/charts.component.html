@@ -1,12 +1,16 @@
 <div class="container my-3">
-    <h1 class="h3 mb-2 text-gray-800">Recomendación</h1>
-    <p class="mb-4">Según tus resultados te recomendamos la profesión de --carrera--</p>
+    <h1 class="h3 mb-2 text-gray-800 border-bottom py-2">Resultados</h1>
+    <p class="mb-4 col-xl-8 col-lg-9">Esta gráfica se construye con las respuestas dadas por usted en la encuesta de
+        intereses. Las barras
+        indican si las carreras abordan o no los temas que son de su preferencia. La primera barra en aparecer
+        representa el programa más cercano a sus gustos o intereses personales. La gráfica puede tener empates entre las
+        barras, que se interpretan como carreras de igual cercanía con los temas de su gusto.</p>
     <!-- Content Row -->
     <div class="row">
-        <div class="col-xl-8 col-lg-7">
+        <div class="col-xl-8 col-lg-9">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Afinidad</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Gráfica de Interés Vocacional</h6>
                 </div>
                 <div class="card-body">
                     <canvas id="afinityChart" width="600" height="400"></canvas>
@@ -14,4 +18,38 @@
             </div>
         </div>
     </div>
+
+
+    <div class="row">
+        <div class="col-xl-8 col-lg-9">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Tabla de Interés Vocacional</h6>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Carrera</th>
+                                <th scope="col">Afinidad %</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let carrera of dataSurvey">
+                                <td>{{carrera.carrera}}</td>
+                                <td>{{ carrera.porcentaje | number:'1.2-2' }}%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex ">
+        <a href="home" class="btn bg-usco-red px-5 text-white fw-semibold fs-6 mt-3 rounded-5 p-2 text-decoration-none">
+            Volver
+        </a>
+    </div>
+
 </div>

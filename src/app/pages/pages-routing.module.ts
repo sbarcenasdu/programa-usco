@@ -6,6 +6,7 @@ import { SurveyComponent } from './survey/survey.component';
 import { SimulatorComponent } from './simulator/simulator.component';
 import { ChartsComponent } from './charts/charts.component';
 import { ImportantInfoComponent } from './important-info/important-info.component';
+import { EditChartsComponent } from './edit-charts/edit-charts.component';
 
 const routes: Routes = [{
   path:'home', component: PagesComponent,
@@ -14,7 +15,8 @@ const routes: Routes = [{
     {path: 'survey', component: SurveyComponent},
     {path: 'simulator', component: SimulatorComponent},
     {path: 'charts', component: ChartsComponent},
-    {path: 'important-info', component: ImportantInfoComponent}
+    {path: 'important-info', component: ImportantInfoComponent},
+    {path: 'edit-chart', component: EditChartsComponent}
   ]
 }];
 

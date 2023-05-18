@@ -13,6 +13,7 @@ import { SimulatorComponent } from './simulator/simulator.component';
 import { ChartsComponent } from './charts/charts.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ImportantInfoComponent } from './important-info/important-info.component';
+import { EditChartsComponent } from './edit-charts/edit-charts.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ImportantInfoComponent } from './important-info/important-info.componen
     SimulatorComponent,
     ChartsComponent,
     ImportantInfoComponent,
+    EditChartsComponent,
   ],
   imports: [
     CommonModule,

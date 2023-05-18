@@ -1,4 +1,4 @@
-<div class="bg-usco-blue" style="height: 100vh;">
+<div class="bg-usco-gray" style="height: auto;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-10 col-lg-12 col-md-9">
@@ -117,13 +117,19 @@
                                                 </div>
                                             </div>
                                         </div>
-
-
-
-
                                         <div class="form-group">
                                             <div class="mb-3 mb-sm-0">
                                                 <input type="text" class="form-control form-control-user"
+                                                    placeholder="Institución Educativa" formControlName="institution">
+                                                <div class="text-danger">
+                                                    <small *ngIf="campoNoValido('institution')">*La institución es
+                                                        obligatoria</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="mb-3 mb-sm-0">
+                                                <input type="password" class="form-control form-control-user"
                                                     placeholder="Contraseña" formControlName="password">
                                                 <div class="text-danger">
                                                     <small *ngIf="campoNoValido('password')">*La contraseña es

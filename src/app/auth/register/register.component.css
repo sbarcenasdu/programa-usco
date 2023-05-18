@@ -53,10 +53,11 @@
 
 .bg-login-usco {
     background-image: url("../../../assets/images/fondo.jpg");
-    background-repeat: space;
+    background-repeat: no-repeat;
     /* background-size: 100% 100%; */
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-color: rgb(196, 183, 180);
 }
 
 .bg-usco-redwine {
@@ -73,6 +74,10 @@
 
 .bg-usco-blue1 {
     background-color: rgb(0, 169, 186);
+}
+
+.bg-usco-gray{
+    background-color: rgb(171, 179, 184);
 }
 
 .test {

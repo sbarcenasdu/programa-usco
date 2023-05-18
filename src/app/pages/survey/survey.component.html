@@ -57,8 +57,9 @@
             </div> -->
         </form>
     </div>
-    <div class="d-flex justify-content-end p-3 pr-5">
+    <div  class="d-flex justify-content-end p-3 pr-5">
         <!-- <a routerLink="../charts"> -->
-        <a (click)="registerSurvey()" type="button" class="btn btn-primary   mx-auto mr-lg-5">Realizar encuesta</a>
+        <button [disabled]="surveyForm.invalid" (click)="registerSurvey()" type="button"
+        class="btn btn-primary mx-auto mr-lg-5" id="submitButton">Realizar encuesta</button>
     </div>
 </div>
