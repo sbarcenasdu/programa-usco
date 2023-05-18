@@ -11,6 +11,7 @@ export class ChartsComponent implements OnInit {
   constructor(private surveySrv: SurveyService) { }
 
   public porcentajes: any;
+  public porcentajesTemp: Array<any> = [];
   public carreras: any;
   public dataSurvey: any;
   public document: any;
@@ -24,10 +25,10 @@ export class ChartsComponent implements OnInit {
         for (let index = 0; index < resp.length; index++) {
           const element =resp[index];
           console.log(element.porcentaje);
-          
-         // this.porcentajes.push(element.porcentaje);
+          this.porcentajesTemp.push(element.porcentaje);
           //this.carreras.push(element.carrera);
         }
+        this.porcentajes = this.porcentajesTemp;
       });
     }
 
