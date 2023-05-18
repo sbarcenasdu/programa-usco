@@ -35,4 +35,11 @@ export class SurveyService {
       map(resp => resp)
     );
   }
+
+  getSurvey(userDocument:any){
+    return this.http.get(`${URL}/v1/data/byuser/${userDocument}`).pipe(
+      map(resp => resp)
+    );
+
+  }
 }

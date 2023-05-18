@@ -3,11 +3,12 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { SimulatorService } from 'src/app/services/simulator.service';
 
 @Component({
-  selector: 'app-simulator',
-  templateUrl: './simulator.component.html',
-  styleUrls: ['./simulator.component.css']
+  selector: 'app-edit-test',
+  templateUrl: './edit-test.component.html',
+  styleUrls: ['./edit-test.component.css']
 })
-export class SimulatorComponent {
+export class EditTestComponent {
+
 
   public careers: any = [];
   public formPonderado = this.fb.group({

@@ -31,13 +31,18 @@
                         <thead>
                             <tr>
                                 <th scope="col">Carrera</th>
-                                <th scope="col">Afinidad %</th>
+                                <th scope="col">Valor</th>
+                                <th scope="col">Afinidad</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let carrera of dataSurvey">
                                 <td>{{carrera.carrera}}</td>
                                 <td>{{ carrera.porcentaje | number:'1.2-2' }}%</td>
+                                <td *ngIf="carrera.porcentaje < 20"> Afinidad baja</td>
+                                <td *ngIf="carrera.porcentaje > 20 && carrera.porcentaje < 60"> Afinidad media</td>
+                                <td *ngIf="carrera.porcentaje > 60 && carrera.porcentaje < 80"> Afinidad alta</td>
+                                <td *ngIf="carrera.porcentaje > 80"> Afinidad alta</td>
                             </tr>
                         </tbody>
                     </table>

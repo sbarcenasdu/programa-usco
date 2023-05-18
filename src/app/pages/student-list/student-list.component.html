@@ -1,0 +1,42 @@
+<div class="container bg-usco">
+    <div class="card">
+      <div>
+        <h3 class="card-header text-center font-weight-bold text-uppercase py-4">
+          Listado
+        </h3>
+        <p>Listado de estudiantes que han presentado la prueba de orientación profesional.</p>
+      </div>
+      <div class="card-body">
+        <div id="table" class="table-editable">
+          <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i class="fas fa-plus fa-2x"
+                aria-hidden="true"></i></a></span>
+          
+            <table class="table table-bordered table-responsive-md table-striped text-center">
+              <thead>
+                <tr>
+                  <th class="text-center">Nombre</th>
+                  <th class="text-center">Cedula</th>
+                  <th class="text-center">-- enlace --</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                <tr *ngFor="let career of careers">
+                  <td class="pt-3-half text-start">{{career.title}}</td>
+                  <td class="pt-3-half">{{career.lecturaCritica}}</td>
+                  <td class="pt-3-half">{{career.cienciasNaturales}}</td>
+                  <td class="pt-3-half">{{career.cienciasSociales}}</td>
+                  <td class="pt-3-half">{{career.matematicas}}</td>
+                  <td class="pt-3-half">{{career.ingles}}</td>
+                  <td class="pt-3-half">{{career.puntajePonderado}}</td>
+                  <td class="pt-3-half">{{career.puntaCorte1}}</td>
+                  <td class="pt-3-half">{{career.puntaCorte2}}</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+  
+      </div>
+  
+    </div>
+  </div>

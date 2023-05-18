@@ -13,10 +13,27 @@ export class ChartsComponent implements OnInit {
   public porcentajes: any;
   public carreras: any;
   public dataSurvey: any;
+  public document: any;
 
   ngOnInit() {
     // const data = this.getValues();
-    this.porcentajes = this.surveySrv.porcentajes;
+    this.document = localStorage.getItem('userDocument');
+    if(this.surveySrv.porcentajes.length === 0){ 
+      this.surveySrv.getSurvey(this.document).subscribe((resp: any) => {
+        console.log(resp);
+        for (let index = 0; index < resp.length; index++) {
+          const element =resp[index];
+          console.log(element.porcentaje);
+          
+         // this.porcentajes.push(element.porcentaje);
+          //this.carreras.push(element.carrera);
+        }
+      });
+    }
+
+    else{
+      this.porcentajes = this.surveySrv.porcentajes;
+    }
     this.carreras = this.surveySrv.carreras;
     this.dataSurvey = this.surveySrv.dataSurvey;
     const densityCanvas = document.getElementById("afinityChart") as HTMLCanvasElement;

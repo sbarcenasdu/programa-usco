@@ -1,0 +1,40 @@
+<div class="container bg-usco">
+    <div class="card">
+      <div>
+        <h3 class="card-header text-center font-weight-bold text-uppercase py-4">
+          PRUEBA DE ORIENTACIÓN PROFESIONAL
+        </h3>
+        <p>El presente es un aplicativo simulador en el que podrá realizar el ejercicio para conocer su puntaje ponderado,
+          según los resultados de las áreas evaluadas por el ICFES; lo que le permitirá una aproximación con los puntajes
+          de cierre de los dos (2) últimos periodos académicos inmediatamente anterior</p>
+      </div>
+      <div class="card-body">
+        <div id="table" class="table-editable">
+          <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i class="fas fa-plus fa-2x"
+                aria-hidden="true"></i></a></span>
+          <form [formGroup]="formPonderado">
+            <table class="table table-bordered table-responsive-md table-striped text-center">
+              <thead>
+                <tr>
+                  <th class="text-center">Nombre</th>
+                  <th class="text-center">Documento</th>
+                  <th class="text-center">-- ruta --</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let career of careers">
+                  <td class="pt-3-half text-start" contenteditable="true">{{career.title}}</td>
+                  <td class="pt-3-half" contenteditable="true">{{career.lecturaCritica}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- <div class="d-flex justify-content-center p-2">
+              <button type="submit" class="btn btn-primary text-white fw-semibold">Calcular</button>
+            </div> -->
+          </form>
+        </div>
+  
+      </div>
+  
+    </div>
+  </div>

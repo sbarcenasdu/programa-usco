@@ -1,0 +1,13 @@
+<div class="container my-3">
+    <div class="mb-3">
+        <label for="searchInput" class="form-label">Buscar estudiante</label>
+        <input type="text" class="form-control" id="searchInput" [(ngModel)]="searchText" (input)="search()">
+      </div>
+      
+      <div class="list-group">
+        <button class="list-group-item list-group-item-action" *ngFor="let student of filteredStudents">
+          {{ student.name }}
+        </button>
+      </div>
+      
+</div>

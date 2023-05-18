@@ -1,3 +1,9 @@
 .pt-3-half {
-    padding-top: 0.5rem;
-  }
+  padding-top: 0.5rem;
+}
+
+
+.celda input td tr{
+  text-align: center;
+  vertical-align: middle;
+}

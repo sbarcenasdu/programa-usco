@@ -14,6 +14,11 @@ import { ChartsComponent } from './charts/charts.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ImportantInfoComponent } from './important-info/important-info.component';
 import { EditChartsComponent } from './edit-charts/edit-charts.component';
+import { AdminEditComponent } from './admin-edit/admin-edit.component';
+import { StudentListComponent } from './student-list/student-list.component';
+import { StudentResultsComponent } from './student-results/student-results.component';
+import { EditCareerComponent } from './edit-career/edit-career.component';
+import { EditTestComponent } from './edit-test/edit-test.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +29,11 @@ import { EditChartsComponent } from './edit-charts/edit-charts.component';
     ChartsComponent,
     ImportantInfoComponent,
     EditChartsComponent,
+    AdminEditComponent,
+    StudentListComponent,
+    StudentResultsComponent,
+    EditCareerComponent,
+    EditTestComponent,
   ],
   imports: [
     CommonModule,

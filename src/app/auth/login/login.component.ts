@@ -36,17 +36,20 @@ export class LoginComponent implements OnInit {
     }
     this.btnLoading = true;
     this.authSrv.login(this.loginForm.value).subscribe((resp: any) => {
+      console.log(resp[0].role);
+      
       if (resp.length === 0) {
         Swal.fire('Error', 'Credenciales incorrectas', 'error');
         this.btnLoading = false;
       } else {
-        if (this.authSrv.isSD) {
+        if (resp[0].role === 'ADMIN') {
           this.authSrv.isSD = false;
-          this.router.navigateByUrl('/home/charts');
+          this.router.navigateByUrl('/home/admin-edit');
         }
         else {
-          // this.router.navigateByUrl('/home/adminCharts');
-          Swal.fire('Éxito', 'Inicio de sesión exitoso', 'success');
+          localStorage.setItem('userDocument', resp[0].userDocument);
+           this.router.navigateByUrl('/home/charts');
+          //Swal.fire('Éxito', 'Inicio de sesión exitoso', 'success');
         }
       }
     }, (err) => {
