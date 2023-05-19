@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "program": "MEDICINA",
+        "description": "Prevenir, diagnosticar, tratar y rehabilitar la enfermedad colaborando con grupos de estudio, investigación o tratamiento"
+    },
+    {
+        "id": 2,
+        "program": "MEDICINA",
+        "description": "Ayudar a la sociedad a mejorar sus condiciones de salud, a nivel individual y colectivo."
+    },
+    {
+        "id": 3,
+        "program": "ENFERMERIA",
+        "description": "Cuidar la salud de las personas, prevenir enfermedades y promover hábitos y estilos de vida saludable"
+    },
+    {
+        "id": 4,
+        "program": "ENFERMERIA",
+        "description": "Trabajar en clínicas, hospitales, instituciones educativas, o en residencias de personas que requieran cuidados de salud"
+    }
+]
