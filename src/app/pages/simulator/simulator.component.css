@@ -3,7 +3,28 @@
 }
 
 
-.celda input td tr{
+.celda input td tr {
   text-align: center;
   vertical-align: middle;
+}
+
+.bg-usco {
+  /* background-image: url('../../../assets/images/fondo.jpg'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(rgba(126, 110, 110, 0.4), rgba(238, 207, 178, 0.4)),
+    url("../../../assets/images/fondo.jpg");
+}
+
+
+
+.table thead th{
+  vertical-align: middle;
+  border-bottom: 2px solid #e3e6f0;
+}
+.table td, .table th {
+  padding: 0.75rem;
+  vertical-align: middle;
+  border-top: 1px solid #e3e6f0;
 }
