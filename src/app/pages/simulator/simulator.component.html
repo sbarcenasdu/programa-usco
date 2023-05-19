@@ -5,14 +5,14 @@
         <h3 class="card-header text-center font-weight-bold text-uppercase py-4">
           SIMULADOR DE PUNTAJE PONDERADO
         </h3>
-        <p class="px-3 mx-3 mt-3 fs-5">El presente es un aplicativo simulador en el que podrá realizar el ejercicio para
+        <p class="px-3 mx-3 mt-3 fs-5" style="text-align: justify;">El presente es un aplicativo simulador en el que podrá realizar el ejercicio para
           conocer su puntaje ponderado,
           según los resultados de las áreas evaluadas por el ICFES; lo que le permitirá una aproximación con los puntajes
           de cierre de los dos (2) últimos periodos académicos inmediatamente anterior</p>
       </div>
-      <div class="bg-warning text-dark text-center d-flex align-items-center">
+      <div class="bg-warning text-black text-center" style="height: 1.5rem;">
         <p>
-          ESTA ES UNA HERRAMIENTA
+          ESTA ES UNA HERRAMIENTA DE ORIENTACIÓN, NO ES UNA GARANTÍA DE ADMISIÓN A LA UNIVERSIDAD SURCOLOMBIANA.
         </p>
       </div>
       <div class="card-body">
@@ -38,24 +38,24 @@
                     Ingrese aquí su puntaje ICFES
                   </td>
                   <td>
-                    <input class="text-center p-2 rounded border-white" style="width: 50px" type="text"
-                      formControlName="lecturaCritica">
+                    <input class="text-center  rounded border-white" style="width: 55px" type="text"
+                      formControlName="lecturaCritica" (keypress)="validateInput($event)">
                   </td>
                   <td>
-                    <input class="text-center p-2 rounded border-white" style="width: 50px" type="text"
-                      formControlName="cienciasNaturales">
+                    <input class="text-center  rounded border-white" style="width: 55px" type="text"
+                      formControlName="cienciasNaturales" (keypress)="validateInput($event)">
                   </td>
                   <td>
-                    <input class="text-center p-2 rounded border-white" style="width: 50px" type="text"
-                      formControlName="cienciasSociales">
+                    <input class="text-center  rounded border-white" style="width: 55px" type="text"
+                      formControlName="cienciasSociales" (keypress)="validateInput($event)">
                   </td>
                   <td>
-                    <input class="text-center p-2 rounded border-white" style="width: 50px" type="text"
-                      formControlName="matematicas">
+                    <input class="text-center  rounded border-white" style="width: 55px" type="text"
+                      formControlName="matematicas" (keypress)="validateInput($event)">
                   </td>
                   <td>
-                    <input class="text-center p-2 rounded border-white" style="width: 50px" type="text"
-                      formControlName="ingles">
+                    <input class="text-center  rounded border-white" style="width: 55px" type="text"
+                      formControlName="ingles" (keypress)="validateInput($event)">
                   </td>
                   <td>
                     <button type="submit" class="btn btn-outline-dark fw-semibold px-3 fs-5">Calcular</button>
