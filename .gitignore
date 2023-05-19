@@ -12,5 +12,4 @@ yarn.lock
 .angular-config.json
 angular.json
 
-# Carpeta de construcción de Angular
-/dist/
+
