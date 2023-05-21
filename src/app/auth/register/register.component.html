@@ -1,4 +1,4 @@
-<div class="bg-usco-gray" style="height: auto;">
+<div class="bg-usco-tree" style="height: auto;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-10 col-lg-12 col-md-9">
@@ -28,7 +28,7 @@
                                             <input type="email" class="form-control form-control-user"
                                                 placeholder="Correo electronico" formControlName="email">
                                             <div class="text-danger">
-                                                <small *ngIf="campoNoValido('email')">*El Correo es obligatorio</small>
+                                                <small *ngIf="campoNoValido('email')">*El correo electrónico es obligatorio</small>
                                             </div>
                                         </div>
                                         <div class="mb-3">
@@ -54,7 +54,7 @@
                                                     id="exampleRepeatPassword" placeholder="Documento"
                                                     formControlName="document">
                                                 <div class="text-danger">
-                                                    <small *ngIf="campoNoValido('document')">*El Documento es
+                                                    <small *ngIf="campoNoValido('document')">*El número de documento es
                                                         obligatorio
                                                     </small>
                                                 </div>
@@ -63,7 +63,7 @@
                                                 <input type="text" class="form-control form-control-user"
                                                     placeholder="Telefono" formControlName="phoneNumber">
                                                 <div class="text-danger">
-                                                    <small *ngIf="campoNoValido('phoneNumber')">*El Telefono es
+                                                    <small *ngIf="campoNoValido('phoneNumber')">*El número de teléfono es
                                                         obligatorio
                                                     </small>
                                                 </div>
@@ -79,31 +79,30 @@
                                                     <option value="femenino">Femenino</option>
                                                 </select>
                                                 <div class="text-danger">
-                                                    <small *ngIf="campoNoValido('documentType')">*El género es
+                                                    <small *ngIf="campoNoValido('gender')">*El género es
                                                         obligatorio</small>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <input type="text" class="form-control form-control-user"
-                                                    id="residence" placeholder="Muincipio de Residencia"
+                                                    id="residence" placeholder="Municipio de Residencia"
                                                     formControlName="residence">
                                                 <div class="text-danger">
-                                                    <small *ngIf="campoNoValido('residence')">*La fecha de nacimiento es
+                                                    <small *ngIf="campoNoValido('residence')">*El municipio de residencia es
                                                         obligatorio
                                                     </small>
                                                 </div>
                                             </div>
                                         </div>
 
-
                                         <div class="form-group row">
                                             <div class="col-sm-6">
-                                                <input type="text" class="form-control form-control-user"
+                                                <input type="date" class="form-control form-control-user"
                                                     id="birthdate" placeholder="Fecha de Nacimiento"
                                                     formControlName="birthdate">
                                                 <div class="text-danger">
                                                     <small *ngIf="campoNoValido('birthdate')">*La fecha de nacimiento es
-                                                        obligatorio
+                                                        obligatoria
                                                     </small>
                                                 </div>
                                             </div>
@@ -122,7 +121,7 @@
                                                 <input type="text" class="form-control form-control-user"
                                                     placeholder="Institución Educativa" formControlName="institution">
                                                 <div class="text-danger">
-                                                    <small *ngIf="campoNoValido('institution')">*La institución es
+                                                    <small *ngIf="campoNoValido('institution')">*La institución educativa es
                                                         obligatoria</small>
                                                 </div>
                                             </div>
@@ -133,11 +132,11 @@
                                                     placeholder="Contraseña" formControlName="password">
                                                 <div class="text-danger">
                                                     <small *ngIf="campoNoValido('password')">*La contraseña es
-                                                        obligatoria</small>
+                                                        obligatoria (mín. 8 caracteres)</small>
                                                 </div>
                                             </div>
                                         </div>
-                                        <button class="btn btn-primary btn-user btn-block">
+                                        <button class="btn btn-outline-primary btn-user btn-block">
                                             Registrar Cuenta
                                         </button>
                                     </form>

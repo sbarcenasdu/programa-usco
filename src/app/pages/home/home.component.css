@@ -98,21 +98,25 @@
     box-shadow: 0 0.15rem 0.4rem rgba(0, 0, 0, 0.4);
     cursor: pointer;
 }
+
 .card {
     box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
 }
 
-.mw-vw-90{
+.mw-vw-90 {
     max-width: 90vw;
 }
 
-.bg-usco{
+.bg-usco {
     background-image: url('../../../assets/images/fondo.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: repeat;
+    background-size: 70%;
     background-position: center;
 }
 
-.bg-usco-colors{
-    background-color: rgb(235,230,209);
+.bg-usco-gray{
+    background-color: rgb(171, 179, 184);
+}
+.bg-usco-grayc{
+    background-color: rgb(218, 218, 218);
 }

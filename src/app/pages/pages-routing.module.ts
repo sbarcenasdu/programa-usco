@@ -12,6 +12,7 @@ import { StudentListComponent } from './student-list/student-list.component';
 import { StudentResultsComponent } from './student-results/student-results.component';
 import { EditCareerComponent } from './edit-career/edit-career.component';
 import { EditTestComponent } from './edit-test/edit-test.component';
+import { GlobalChartComponent } from './global-chart/global-chart.component';
 
 const routes: Routes = [{
   path:'home', component: PagesComponent,
@@ -27,6 +28,7 @@ const routes: Routes = [{
     {path: 'student-results', component: StudentResultsComponent},
     {path: 'edit-career', component: EditCareerComponent},
     {path: 'edit-test', component: EditTestComponent},
+    {path: 'global-chart', component: GlobalChartComponent}
   ]
 }];
 

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AdminService } from 'src/app/services/admin.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-student-results',
@@ -7,21 +10,30 @@ import { Component } from '@angular/core';
 })
 export class StudentResultsComponent {
 
+  searchTerm: string = '';
+  studentData: any;
 
-  students: any[] = [
-    { name: 'John Doe' },
-    { name: 'Jane Smith' },
-    { name: 'Michael Johnson' },
-    { name: 'Emily Davis' },
-    { name: 'David Brown' }
-  ];
+  constructor(
+    private adminSrv: AdminService,
+    private router: Router
+  ) { }
 
-  filteredStudents: any[] = [];
-  searchText: string = '';
-
-  search() {
-    this.filteredStudents = this.students.filter(student =>
-      student.name.toLowerCase().includes(this.searchText.toLowerCase())
+  searchData() {
+    this.adminSrv.getStudentData(this.searchTerm).subscribe(
+      (resp: any) => {
+        console.log(resp);
+        if (resp.length === 0) {
+          Swal.fire('No se encontraron resultados', '', 'info');
+          return;
+        }
+        this.studentData = resp;
+        localStorage.setItem('studentData', JSON.stringify(resp));
+        this.router.navigateByUrl('home/charts');
+      },
+      (error) => {
+        console.log(error);
+        Swal.fire('Error', 'Ocurrió un error al obtener los datos', 'error');
+      }
     );
   }
 }

@@ -1,17 +1,26 @@
-<div class="container">
-    <div class="d-flex justify-content-center pt-5 py-2">
-        <h3 class="fw-semibold border-bottom">PRUEBA DE ORIENTACIÓN PROFESIONAL</h3>
+<div class="container bg-usco-ocre rounded mb-4 pt-3">
+    <div class="d-flex justify-content-center">
+        <h3 class="fw-semibold border-bottom border-secondary">PRUEBA DE ORIENTACIÓN PROFESIONAL</h3>
     </div>
     <div class="d-flex justify-content-center">
-        <p class=""></p>
+        <p class="py-2 mx-md-4" style="text-align: justify;">Para empezar deberás de diligenciar la encuesta de
+            intereses
+            vocacionales que te preguntará sobre tus gustos y afinidades. Al terminar la encuesta se te preguntará sobre
+            tu información académica como tus materias favoritas y los resultados de tus pruebas ICFES para generar los
+            resultados. Se aclara que la realización de la prueba no está relacionada con el proceso de matrícula de la
+            Universidad Surcolombiana, por lo tanto el aplicativo solo sirve como herramienta orientadora para nuestros
+            futuros estudiantes. <br>
+            <a href="https://www.usco.edu.co/es/ingreso-a-la-usco/" class=""
+            target="_new">Click aquí para más información sobre pregrados</a>
+        </p>
     </div>
-    <div class="container-fluid d-flex gap-3 justify-content-center mt-3 p-2 flex-wrap">
-        <form role="form" [formGroup]="surveyForm">
-            <!-- <div *ngFor="let question of questions | paginate: { itemsPerPage: pageSize, currentPage: p, totalItems: totalQuestions }; let i = index" -->
+
+    <form role="form" [formGroup]="surveyForm">
+        <div class="container-fluid row gap-3 justify-content-center">
             <div *ngFor="let question of questions; let i = index"
-                class="border rounded-3 border-secondary p-2 px-3 mb-3 question">
+                class="col-12 col-md-5 border border-secondary rounded-3 bg-light questionn">
                 <div class="">
-                    <p class="text-muted fw-semibold">{{ i + 1 }} . {{ question.description }}</p>
+                    <p class="text-black"><b>{{ i + 1 }}.</b> {{ question.description }}</p>
                 </div>
                 <div class="d-flex flex-wrap">
                     <div class="form-check mr-4">
@@ -32,7 +41,7 @@
                     </div>
                     <div class="form-check mr-4">
                         <input class="form-check-input" type="radio" formControlName="question{{ i + 1 }}"
-                            [value]="{ question: question.description, option: '1.25', program: question.program }"
+                            [value]="{ question: question.description, option: '2.1', program: question.program }"
                             id="question{{ i + 1 }}-option3">
                         <label class="form-check-label" for="question{{ i + 1 }}-option3">
                             Me gusta poco
@@ -40,26 +49,22 @@
                     </div>
                     <div class="form-check mr-4">
                         <input class="form-check-input" type="radio" formControlName="question{{ i + 1 }}"
-                            [value]="{ question: question.description, option: '2.5', program: question.program }"
+                            [value]="{ question: question.description, option: '4.25', program: question.program }"
                             id="question{{ i + 1 }}-option4">
                         <label class="form-check-label" for="question{{ i + 1 }}-option4">
                             No me gusta
                         </label>
                     </div>
-
                 </div>
             </div>
-            <!-- <div class="d-flex justify-content-center">
-                <pagination-controls (pageChange)="p = $event"
-                    previousLabel="Anterior"
-                    nextLabel="Siguiente">
-                </pagination-controls>
-            </div> -->
-        </form>
-    </div>
-    <div  class="d-flex justify-content-end p-3 pr-5">
+        </div>
+    </form>
+    <div class="d-flex justify-content-end p-3 pr-5">
         <!-- <a routerLink="../charts"> -->
         <button [disabled]="surveyForm.invalid" (click)="registerSurvey()" type="button"
-        class="btn btn-primary mx-auto mr-lg-5" id="submitButton">Realizar encuesta</button>
+            class="btn btn-primary mx-auto mr-lg-5" id="submitButton">Realizar encuesta</button>
+            <div class="text-danger">
+                <small *ngIf="">*El correo es obligatorio</small>
+            </div>
     </div>
 </div>

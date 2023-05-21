@@ -10,41 +10,116 @@ import { SurveyService } from 'src/app/services/survey.service';
 export class ChartsComponent implements OnInit {
   constructor(private surveySrv: SurveyService) { }
 
-  public porcentajes: any;
-  public porcentajesTemp: Array<any> = [];
-  public carreras: any;
-  public dataSurvey: any;
-  public document: any;
+  p: number = 1;
+  collection: any[] = [];
+  public porcentajes: Array<any> = [];
+  public carreras: Array<any> = [];
+  public dataSurvey: Array<any> = [];
+  public userDocument: any;
+  public studentData: any;
+  public documentData: any;
 
   ngOnInit() {
     // const data = this.getValues();
-    this.document = localStorage.getItem('userDocument');
-    if(this.surveySrv.porcentajes.length === 0){ 
-      this.surveySrv.getSurvey(this.document).subscribe((resp: any) => {
-        console.log(resp);
-        for (let index = 0; index < resp.length; index++) {
-          const element =resp[index];
-          console.log(element.porcentaje);
-          this.porcentajesTemp.push(element.porcentaje);
-          //this.carreras.push(element.carrera);
+    this.userDocument = localStorage.getItem('userDocument');
+    this.studentData = localStorage.getItem('studentData');
+
+    // desde ADMIN consulta por cedula STUDENT-RESULTS
+    if (this.studentData !== null) {
+      this.dataSurvey = JSON.parse(this.studentData);//[{}...]
+      console.log(this.dataSurvey);
+      // console.log(this.dataSurvey[0].carrera);
+      for (const key in this.dataSurvey) {
+        if (Object.prototype.hasOwnProperty.call(this.dataSurvey, key)) {
+          const element = this.dataSurvey[key];
+          this.porcentajes.push(element.porcentaje);
+          this.carreras.push(element.carrera);
         }
-        this.porcentajes = this.porcentajesTemp;
+      }
+      this.renderData();
+    }
+    //desde SURVEY
+    else if (this.surveySrv.porcentajes.length > 0) {
+      this.porcentajes = this.surveySrv.porcentajes;
+      this.carreras = this.surveySrv.carreras;
+      this.dataSurvey = this.surveySrv.dataSurvey;
+      this.renderData();
+    }
+
+    // desde LOGIN
+    else {
+      this.surveySrv.getSurvey(this.userDocument).subscribe((resp: any) => {
+        this.dataSurvey = resp;
+        for (const key in resp) {
+          if (Object.prototype.hasOwnProperty.call(resp, key)) {
+            const element = resp[key];
+            this.porcentajes.push(element.porcentaje);
+            this.carreras.push(element.carrera);
+          }
+        }
+        this.renderData();
       });
     }
+  }
 
-    else{
-      this.porcentajes = this.surveySrv.porcentajes;
-    }
-    this.carreras = this.surveySrv.carreras;
-    this.dataSurvey = this.surveySrv.dataSurvey;
+  public renderData() {
     const densityCanvas = document.getElementById("afinityChart") as HTMLCanvasElement;
-    const densityData = {
-      label: 'Afinidad de las carreras',
+    const backgroundColors = [
+      'rgba(255, 0, 0, 0.6)',
+      'rgba(0, 255, 0, 0.6)',
+      'rgba(0, 0, 255, 0.6)',
+      'rgba(255, 255, 0, 0.6)',
+      'rgba(0, 255, 255, 0.6)',
+      'rgba(255, 0, 255, 0.6)',
+      'rgba(128, 0, 0, 0.6)',
+      'rgba(0, 128, 0, 0.6)',
+      'rgba(0, 0, 128, 0.6)',
+      'rgba(0, 128, 128, 0.6)',
+      'rgba(128, 0, 128, 0.6)',
+      'rgba(255, 128, 0, 0.6)',
+      'rgba(255, 0, 128, 0.6)',
+      'rgba(128, 255, 0, 0.6)',
+      'rgba(0, 255, 128, 0.6)',
+      'rgba(128, 0, 255, 0.6)',
+      'rgba(0, 128, 255, 0.6)'
+    ];
+    //const labels = this.carreras.map(carrera => carrera.nombre);
+    const densityData = { 
+      // label: 'Afinidad de programas',
+      //labels: labels,
       data: this.porcentajes,
-      backgroundColor: 'rgba(0, 123, 255, 0.6)'
+      backgroundColor: backgroundColors
     };
     this.renderChart(densityCanvas, densityData, this.porcentajes);
+  }
 
+  renderChart(canvas: HTMLCanvasElement, chartData: any, data: number[]) {
+    new Chart(canvas, {
+      type: 'bar',
+      data: {
+        labels: this.carreras,
+        datasets: [chartData]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            min: 0,
+            max: 100
+          }
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: 'Afinidad de programas'
+          },
+          legend: {
+            display: false
+          }
+        }
+      }
+    });
   }
 
   getValuesLocalStorage(): number[] {
@@ -62,59 +137,5 @@ export class ChartsComponent implements OnInit {
       console.error('Error al parsear los valores del LocalStorage:', error);
       return [];
     }
-  }
-
-
-
-
-  renderChart(canvas: HTMLCanvasElement, chartData: any, data: number[]) {
-    new Chart(canvas, {
-      type: 'bar',
-      data: {
-        labels: [
-          'MEDICINA',
-          'ENFERMERÍA',
-          'ECONOMÍA',
-          'ADM. EMPRESAS',
-          'CONT. PÚBLICA',
-          'ADM. FINANCIERA',
-          'ADM. TURÍSTICA',
-          'COM. SOCIAL',
-          'PSICOLOGÍA',
-          'ANTROPOLOGÍA',
-          'DERECHO',
-          'CIENCIA POLÍTICA',
-          'MAT. APLICADA',
-          'FÍSICA',
-          'BIOLOGÍA APLICADA',
-          'LIC. INGLÉS',
-          'LIC. LITERATURA',
-          'LIC. C. NATURALES',
-          'LIC. ED. FÍSICA',
-          'LIC. ED. ARTÍSTICA',
-          'LIC. ED. INFANTIL',
-          'LIC. MATEMÁTICAS',
-          'LIC. C. SOCIALES',
-          'ING. AGRÍCOLA',
-          'ING. AGROINDUSTRIAL',
-          'ING. ELECTRÓNICA',
-          'ING. PETRÓLEOS',
-          'ING. SOFTWARE',
-          'ING. CIVIL',
-          'TEC. DES. SOFTWARE',
-          'TEC. CONST. CIVILES'
-        ]
-        ,
-        datasets: [chartData]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
   }
 }

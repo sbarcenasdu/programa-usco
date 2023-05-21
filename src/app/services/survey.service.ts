@@ -15,9 +15,11 @@ export class SurveyService {
 
   constructor(private http: HttpClient) { }
 
-  porcentajes: any[] = [];
-  carreras: any[] = [];
-  dataSurvey: any;
+  //primero lo actualiza la encuesta
+  porcentajes: Array<any> = [];
+  carreras: Array<any> = [];
+  dataSurvey: any;//
+
   userDocument: any;
 
   loadJSON(): Observable<any> {
@@ -25,12 +27,11 @@ export class SurveyService {
   }
 
   realiceSurvey(formData: any) {
+    console.log(formData);    
     const json = formData.map((data: any) => ({
       carrera: data.carrera,
       puntaje: data.puntaje
     }));
-    //const userDocument = window.localStorage.getItem('userDocument');
-    console.log(this.userDocument);
     return this.http.post(`${URL}/v1/data/masive/${this.userDocument}`, json).pipe(
       map(resp => resp)
     );

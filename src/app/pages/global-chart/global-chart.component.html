@@ -1,0 +1,63 @@
+<div class="container bg-usco-ocre rounded p-4 mb-5">
+    <div>
+        <h3 class="text-center font-weight-bold text-uppercase pb-2 mb-3 border-bottom border-secondary">
+            Resultados Globales
+        </h3>
+        <p class="">Presentación de los resultados globales de la prueba de orientación profesional para el total de
+            estudiantes universitarios participantes.</p>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-xl-8 col-lg-9">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Gráfica de Interés Vocacional Global</h6>
+                </div>
+                <div class="card-body">
+                    <canvas id="afinityChart" width="600" height="400"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-xl-8 col-lg-9">
+            <div class="card shadow mb-4">
+                <div class="card-header">
+                    <h6 class="m-0 font-weight-bold text-primary">Tabla de Interés Vocacional</h6>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Carrera</th>
+                                <th scope="col">Puntaje</th>
+                                <th scope="col">Afinidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of globalData | paginate: { itemsPerPage: 8, currentPage: p }">
+                                <td>{{data.carrera}}</td>
+                                <td>{{ data.puntaje | number:'1.2-2' }}%</td>
+                                <td *ngIf="data.puntaje < 20">Afinidad baja</td>
+                                <td *ngIf="data.puntaje >= 20 && data.puntaje < 60">Afinidad media</td>
+                                <td *ngIf="data.puntaje >= 60 && data.puntaje < 80"><b class="text-primary">Afinidad alta</b></td>
+                                <td *ngIf="data.puntaje >= 80"><b class="text-success">Afinidad muy alta</b></td>
+                            </tr>
+                        </tbody>
+                        <div class="d-flex justify-content-center">
+                            <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
+                                nextLabel="Siguiente"></pagination-controls>
+                        </div>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <a href="home/admin-edit"
+            class="btn bg-usco-red text-white fw-semibold fs-6 rounded-5 px-5 mt-3 text-decoration-none">Volver</a>
+    </div>
+
+
+
+
+</div>

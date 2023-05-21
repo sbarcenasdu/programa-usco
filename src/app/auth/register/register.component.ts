@@ -30,7 +30,7 @@ export class RegisterComponent {
       residence: ['', Validators.required],
       birthdate: ['', Validators.required],
       placeBirth: ['', Validators.required],
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(8)]],
       institution: ['', Validators.required]
     });
   }
@@ -53,7 +53,9 @@ export class RegisterComponent {
         //localStorage.clear();
         //localStorage.setItem('userDocument', userDocument.toString());
         Swal.fire('Éxito', 'Registro exitoso', 'success');
-        this.route.navigateByUrl('/home/survey');
+        setTimeout(() => {
+          this.route.navigateByUrl('/home/survey');
+        }, 1000);
       },
       (err) => {
         console.log(err);

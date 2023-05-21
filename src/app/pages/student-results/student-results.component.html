@@ -1,13 +1,14 @@
-<div class="container my-3">
+<div class="container bg-usco-ocre rounded p-4 mb-5" style="min-height: 500px;">
+  <div class="container my-3">
     <div class="mb-3">
-        <label for="searchInput" class="form-label">Buscar estudiante</label>
-        <input type="text" class="form-control" id="searchInput" [(ngModel)]="searchText" (input)="search()">
+      <label for="searchInput" class="form-label">Buscar resultados por número de documento:</label>
+      <div class="d-flex flex-row">
+        <input type="text" class="form-control" style="width: 220px;" [(ngModel)]="searchTerm" id="searchInput">
+        <button type="submit" class="mx-2 btn btn-primary" (click)="searchData()">Buscar</button>
       </div>
-      
-      <div class="list-group">
-        <button class="list-group-item list-group-item-action" *ngFor="let student of filteredStudents">
-          {{ student.name }}
-        </button>
-      </div>
-      
+    </div>
+
+
+
+  </div>
 </div>

@@ -37,25 +37,29 @@
                   <td>
                     Ingrese aquí su puntaje ICFES
                   </td>
-                  <td>
+                  <!-- <td>
                     <input class="text-center  rounded border-white" style="width: 55px" type="text"
                       formControlName="lecturaCritica" (keypress)="validateInput($event)">
+                  </td> -->
+                  <td>
+                    <input class="text-center  rounded border-white" style="width: 55px" type="text"
+                      formControlName="lecturaCritica">
                   </td>
                   <td>
                     <input class="text-center  rounded border-white" style="width: 55px" type="text"
-                      formControlName="cienciasNaturales" (keypress)="validateInput($event)">
+                      formControlName="cienciasNaturales">
                   </td>
                   <td>
                     <input class="text-center  rounded border-white" style="width: 55px" type="text"
-                      formControlName="cienciasSociales" (keypress)="validateInput($event)">
+                      formControlName="cienciasSociales">
                   </td>
                   <td>
                     <input class="text-center  rounded border-white" style="width: 55px" type="text"
-                      formControlName="matematicas" (keypress)="validateInput($event)">
+                      formControlName="matematicas">
                   </td>
                   <td>
                     <input class="text-center  rounded border-white" style="width: 55px" type="text"
-                      formControlName="ingles" (keypress)="validateInput($event)">
+                      formControlName="ingles">
                   </td>
                   <td>
                     <button type="submit" class="btn btn-outline-dark fw-semibold px-3 fs-5">Calcular</button>
@@ -72,9 +76,9 @@
                   <td class="pt-3-half">{{ (career.cienciasSociales * 100).toFixed(1) }}%</td>
                   <td class="pt-3-half">{{ (career.matematicas * 100).toFixed(1) }}%</td>
                   <td class="pt-3-half">{{ (career.ingles * 100).toFixed(1) }}%</td>
-                  <td class="pt-3-half text-danger font-weight-bold">{{ (career.puntajePonderado).toFixed(1) }}%</td>
-                  <td class="pt-3-half">{{ (career.puntaCorte1).toFixed(1) }}%</td>
-                  <td class="pt-3-half">{{ (career.puntaCorte2).toFixed(1) }}%</td>
+                  <td class="pt-3-half text-danger font-weight-bold">{{ (career.puntajePonderado).toFixed(1) }}</td>
+                  <td class="pt-3-half">{{ (career.puntaCorte1).toFixed(1) }}</td>
+                  <td class="pt-3-half">{{ (career.puntaCorte2).toFixed(1) }}</td>
                 </tr>
   
               </tbody>

@@ -8,13 +8,19 @@
   vertical-align: middle;
 }
 
-.bg-usco {
-  /* background-image: url('../../../assets/images/fondo.jpg'); */
+/* .bg-usco {
+  background-image: linear-gradient(rgba(126, 110, 110, 0.2), rgba(238, 207, 178, 0.2)),
+    url("../../../assets/images/fondo.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image: linear-gradient(rgba(126, 110, 110, 0.2), rgba(238, 207, 178, 0.2)),
-    url("../../../assets/images/fondo.jpg");
+} */
+
+.bg-usco {
+  background-image: url('../../../assets/images/fondo.jpg');
+  background-repeat: repeat;
+  background-size: 70%;
+  background-position: center;
 }
 
 

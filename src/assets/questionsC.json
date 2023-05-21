@@ -11,12 +11,12 @@
     },
     {
         "id": 3,
-        "program": "ENFERMERÍA",
+        "program": "ENFERMERIA",
         "description": "Cuidar la salud de las personas, prevenir enfermedades y promover hábitos y estilos de vida saludable"
     },
     {
         "id": 4,
-        "program": "ENFERMERÍA",
+        "program": "ENFERMERIA",
         "description": "Trabajar en clínicas, hospitales, instituciones educativas, o en residencias de personas que requieran cuidados de salud"
     },
     {
@@ -301,12 +301,12 @@
     },
     {
         "id": 61,
-        "program": "TECNOLOGIAOBRASCIVILES ",
+        "program": "TECNOLOGIAOBRASCIVILES",
         "description": "Laborar alrededor de obras de construcción, diseños, planos y materiales para edificar"
     },
     {
         "id": 62,
-        "program": "TECNOLOGIAOBRASCIVILES ",
+        "program": "TECNOLOGIAOBRASCIVILES",
         "description": "Ejecutar propuestas de construcción y edificación civil, en obras públicas o particulares"
     }
 ]

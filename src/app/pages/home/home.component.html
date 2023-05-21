@@ -7,10 +7,9 @@
     <button type="button" class="btn btn-primary">Encuesta</button>
 </a> -->
 
-<div class="container px-4 py-5 bg-white">
-    <h2 class="pb-2 border-bottom fw-semibold">¡Bienvenido a la Universidad Surcolombiana!</h2>
-
-    <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+<div class="container p-5 mb-5 rounded bg-usco-ocre">
+    <h2 class="pb-2 border-bottom border-secondary fw-semibold">¡Bienvenido a la Universidad Surcolombiana!</h2>
+    <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5">
         <div class="d-flex flex-column align-items-start gap-2 ">
             <p class="text-dark" style="text-align: justify">Si estás interesado en ingresar a la Universidad
                 Surcolombiana y deseas saber si tu puntaje en las pruebas ICFES te permite cumplir con los requisitos de
@@ -25,8 +24,7 @@
         <div class="row row-cols-1 row-cols-sm-2 g-4">
             <!-- <div class="d-flex flex-column gap-2"> -->
             <a routerLink="simulator" class="text-decoration-none">
-                <div class="card shd-card text-dark mb-3" style="max-width: 18rem;
-                background-color: rgb(196,227,232)">
+                <div class="card shd-card text-dark mb-3 bg-usco-grayc" style="max-width: 18rem">
                     <div class="card-header fw-semibold">Simulador de Ponderaciones</div>
                     <div class="card-body">
                         <h5 class="card-title"></h5>
@@ -35,13 +33,12 @@
                 </div>
             </a>
             <a routerLink="important-info" class="text-decoration-none">
-                <div class="card shd-card text-dark mb-3" style="max-width: 18rem;
-                background-color: rgb(196,227,232);">
+                <div class="card shd-card text-dark mb-3 bg-usco-grayc" style="max-width: 18rem;">
                     <div class="card-header fw-semibold">Prueba de Orientación Profesional</div>
                     <div class="card-body">
                         <h5 class="card-title"></h5>
                         <p class="card-text">Responde una encuesta y conoce tu interés vocacional. <br>
-                            O click <a class="fw-semibold" routerLink="../login"
+                            O click <a class="fw-semibold text-black text-decoration-underline" routerLink="../login"
                                 (click)="roleVerification('SD')">aqui</a> para ver tus resultados.</p>
                     </div>
                 </div>

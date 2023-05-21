@@ -1,12 +1,11 @@
-<div class="container my-3">
-    <h1 class="h3 mb-2 text-gray-800 border-bottom py-2">Resultados</h1>
-    <p class="mb-4 col-xl-8 col-lg-9">Esta gráfica se construye con las respuestas dadas por usted en la encuesta de
-        intereses. Las barras
-        indican si las carreras abordan o no los temas que son de su preferencia. La primera barra en aparecer
-        representa el programa más cercano a sus gustos o intereses personales. La gráfica puede tener empates entre las
-        barras, que se interpretan como carreras de igual cercanía con los temas de su gusto.</p>
-    <!-- Content Row -->
-    <div class="row">
+<div class="container bg-usco-ocre rounded p-4 mb-5">
+    <h1 class="h3 text-gray-800 border-bottom border-secondary mb-3 py-2">Resultados</h1>
+    <p class="mb-5 col-lg-11" style="text-align: justify;">Esta gráfica se construye con las respuestas dadas por usted
+        en la encuesta de intereses. Las barras indican si las carreras abordan o no los temas que son de su
+        preferencia. La primera barra en aparecer representa el programa más cercano a sus gustos o intereses
+        personales. La gráfica puede tener empates entre las barras, que se interpretan como carreras de igual cercanía
+        con los temas de su gusto.</p>
+    <div class="row justify-content-center">
         <div class="col-xl-8 col-lg-9">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
@@ -18,16 +17,14 @@
             </div>
         </div>
     </div>
-
-
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-xl-8 col-lg-9">
             <div class="card shadow mb-4">
-                <div class="card-header py-3">
+                <div class="card-header">
                     <h6 class="m-0 font-weight-bold text-primary">Tabla de Interés Vocacional</h6>
                 </div>
                 <div class="card-body">
-                    <table class="table table-striped table-hover">
+                    <table class="table table-striped table-hover table-sortable">
                         <thead>
                             <tr>
                                 <th scope="col">Carrera</th>
@@ -36,25 +33,28 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let carrera of dataSurvey">
-                                <td>{{carrera.carrera}}</td>
-                                <td>{{ carrera.porcentaje | number:'1.2-2' }}%</td>
-                                <td *ngIf="carrera.porcentaje < 20"> Afinidad baja</td>
-                                <td *ngIf="carrera.porcentaje > 20 && carrera.porcentaje < 60"> Afinidad media</td>
-                                <td *ngIf="carrera.porcentaje > 60 && carrera.porcentaje < 80"> Afinidad alta</td>
-                                <td *ngIf="carrera.porcentaje > 80"> Afinidad alta</td>
+                            <tr *ngFor="let item of dataSurvey | paginate: { itemsPerPage: 8, currentPage: p }">
+                                <td>{{item.carrera}}</td>
+                                <td>{{ item.porcentaje | number:'1.2-2' }}%</td>
+                                <td *ngIf="item.porcentaje < 20">Afinidad baja</td>
+                                <td *ngIf="item.porcentaje >= 20 && item.porcentaje < 60">Afinidad media</td>
+                                <td *ngIf="item.porcentaje >= 60 && item.porcentaje < 80"><b class="text-primary">Afinidad alta</b></td>
+                                <td *ngIf="item.porcentaje >= 80"><b class="text-success">Afinidad muy alta</b></td>
                             </tr>
                         </tbody>
+                        <div class="d-flex justify-content-center">
+                            <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
+                                nextLabel="Siguiente"></pagination-controls>
+                        </div>
                     </table>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="d-flex ">
-        <a href="home" class="btn bg-usco-red px-5 text-white fw-semibold fs-6 mt-3 rounded-5 p-2 text-decoration-none">
-            Volver
-        </a>
+    <div class="d-flex justify-content-center">
+        <a href="home"
+            class="btn bg-usco-red text-white fw-semibold fs-6 rounded-5 px-5 mt-3 text-decoration-none">Volver</a>
     </div>
+
 
 </div>

@@ -12,11 +12,10 @@ import Swal from 'sweetalert2';
 export class LoginComponent implements OnInit {
 
   public formSubmitted: Boolean = false;
-  public btnLoading: Boolean = false;
 
   public loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(6)]],
+    password: ['', [Validators.required, Validators.minLength(8)]]
   });
 
   constructor(
@@ -34,13 +33,9 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-    this.btnLoading = true;
     this.authSrv.login(this.loginForm.value).subscribe((resp: any) => {
-      console.log(resp[0].role);
-      
       if (resp.length === 0) {
         Swal.fire('Error', 'Credenciales incorrectas', 'error');
-        this.btnLoading = false;
       } else {
         if (resp[0].role === 'ADMIN') {
           this.authSrv.isSD = false;
@@ -48,13 +43,13 @@ export class LoginComponent implements OnInit {
         }
         else {
           localStorage.setItem('userDocument', resp[0].userDocument);
-           this.router.navigateByUrl('/home/charts');
-          //Swal.fire('Éxito', 'Inicio de sesión exitoso', 'success');
+          setTimeout(() => {
+            this.router.navigateByUrl('/home/charts');
+          }, 300);
         }
       }
     }, (err) => {
       Swal.fire('Error', 'Error al iniciar sesión', 'error');
-      this.btnLoading = false;
     })
   }
 

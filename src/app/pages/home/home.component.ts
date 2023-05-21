@@ -12,6 +12,12 @@ export class HomeComponent {
     private router: Router,
     private authSrv: AuthService
   ) {}
+
+  ngOnInit(): void {
+    this.authSrv.isSD = false;
+    this.authSrv.isAdmin = false;
+    localStorage.clear();
+  }
   
   roleVerification(role: any) {
     if (role == 'SD') {

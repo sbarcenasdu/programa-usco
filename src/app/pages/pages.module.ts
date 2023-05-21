@@ -19,6 +19,7 @@ import { StudentListComponent } from './student-list/student-list.component';
 import { StudentResultsComponent } from './student-results/student-results.component';
 import { EditCareerComponent } from './edit-career/edit-career.component';
 import { EditTestComponent } from './edit-test/edit-test.component';
+import { GlobalChartComponent } from './global-chart/global-chart.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { EditTestComponent } from './edit-test/edit-test.component';
     StudentResultsComponent,
     EditCareerComponent,
     EditTestComponent,
+    GlobalChartComponent,
   ],
   imports: [
     CommonModule,
