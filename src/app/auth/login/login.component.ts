@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
       } else {
         if (resp[0].role === 'ADMIN') {
           this.authSrv.isSD = false;
+          this.authSrv.setAdminUser(true);
           this.router.navigateByUrl('/home/admin-edit');
         }
         else {

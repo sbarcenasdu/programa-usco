@@ -36,5 +36,11 @@ export class AuthService {
   isLoggedIn(): boolean {
     return this.isAuthenticated;
   }
+  setAdminUser(isAdmin: boolean): void {
+    this.isAdmin = isAdmin;
+  }
 
+  isAdminUser(): boolean {
+    return this.isAdmin;
+  }
 }

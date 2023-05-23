@@ -15,15 +15,17 @@ import { EditTestComponent } from './edit-test/edit-test.component';
 import { GlobalChartComponent } from './global-chart/global-chart.component';
 
 import { AuthGuard } from '../guards/auth.guard';
+import { AdminGuard } from '../guards/admin.guard';
+
 
 const routes: Routes = [{
   path:'home', component: PagesComponent,
   children:[
     {path: '', component: HomeComponent},
-    {path: 'survey', component: SurveyComponent, canActivate: [AuthGuard]},
-    {path: 'simulator', component: SimulatorComponent, canActivate: [AuthGuard]},
-    {path: 'charts', component: ChartsComponent, canActivate: [AuthGuard]},
-    {path: 'important-info', component: ImportantInfoComponent, canActivate: [AuthGuard]},
+    {path: 'survey', component: SurveyComponent},
+    {path: 'simulator', component: SimulatorComponent},
+    {path: 'charts', component: ChartsComponent},
+    {path: 'important-info', component: ImportantInfoComponent},
     
     {path: 'edit-charts', component: EditChartsComponent},
     {path: 'admin-edit', component: AdminEditComponent},
@@ -32,6 +34,19 @@ const routes: Routes = [{
     {path: 'edit-career', component: EditCareerComponent},
     {path: 'edit-test', component: EditTestComponent},
     {path: 'global-chart', component: GlobalChartComponent},
+    // {path: '', component: HomeComponent},
+    // {path: 'survey', component: SurveyComponent, canActivate: [AuthGuard]},
+    // {path: 'simulator', component: SimulatorComponent},
+    // {path: 'charts', component: ChartsComponent, canActivate: [AuthGuard]},
+    // {path: 'important-info', component: ImportantInfoComponent},
+    
+    // {path: 'edit-charts', component: EditChartsComponent, canActivate: [AdminGuard]},
+    // {path: 'admin-edit', component: AdminEditComponent, canActivate: [AdminGuard]},
+    // {path: 'student-list', component: StudentListComponent, canActivate: [AdminGuard]},
+    // {path: 'student-results', component: StudentResultsComponent, canActivate: [AdminGuard]},
+    // {path: 'edit-career', component: EditCareerComponent, canActivate: [AdminGuard]},
+    // {path: 'edit-test', component: EditTestComponent, canActivate: [AdminGuard]},
+    // {path: 'global-chart', component: GlobalChartComponent, canActivate: [AdminGuard]},
     
   ]
 }];

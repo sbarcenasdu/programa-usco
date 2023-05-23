@@ -42,6 +42,10 @@ export class EditChartsComponent {
 
   //***** funciones
 
+  refreshData() {
+    this.getCareers();
+  }
+
   getCareers() {
     this.adminSrv.getCareers().subscribe(
       (resp: any) => {
@@ -50,7 +54,7 @@ export class EditChartsComponent {
         for (let i = 0; i < resp.length; i++) {
 
           const fieldName1 = `lecturaCritica${i + 1}`
-          this.formPonderado.addControl(fieldName1, this.fb.control((resp[i].lecturaCritica*100 ).toFixed(2), Validators.required));
+          this.formPonderado.addControl(fieldName1, this.fb.control((resp[i].lecturaCritica * 100).toFixed(2), Validators.required));
           const fieldName2 = `cienciasNaturales${i + 1}`;
           this.formPonderado.addControl(fieldName2, this.fb.control((resp[i].cienciasNaturales * 100).toFixed(2), Validators.required));
           const fieldName3 = `cienciasSociales${i + 1}`;
@@ -79,7 +83,8 @@ export class EditChartsComponent {
       (resp: any) => {
         console.log(resp);
         Swal.fire('Éxito', 'Carrera agregada exitosamente', 'success');
-        window.location.reload();
+        // window.location.reload();
+        this.refreshData();
       },
       (err) => {
         console.log(err);
@@ -100,7 +105,8 @@ export class EditChartsComponent {
         this.adminSrv.updateCareer(careerData, this.formPonderado.value, i).subscribe(
           (resp: any) => {
             console.log(resp);
-            window.location.reload();
+            // window.location.reload();
+            this.refreshData();
           },
           (err) => {
             console.log(err);
@@ -124,7 +130,9 @@ export class EditChartsComponent {
         this.adminSrv.deleteCareer(careerID).subscribe(
           (resp: any) => {
             console.log(resp);
-            window.location.reload();
+            // window.location.reload();
+            this.refreshData();
+
           },
           (err) => {
             console.log(err);
@@ -134,20 +142,21 @@ export class EditChartsComponent {
     });
   }
 
-  isEditModeEnabled: boolean = false;
-  headers: string[] = ['ÁREA', 'Lectura Crítica', 'Ciencias Naturales', 'Ciencias Sociales', 'Matemáticas', 'Inglés', 'Su Puntaje Ponderado', 'Puntaje de Cierre 2022-II', 'Puntaje de Cierre 2023-I'];
-
-  enableEditMode() {
-    this.isEditModeEnabled = true;
-  }
-
-  saveHeaders() {
-    // Aquí puedes realizar la lógica para guardar los nombres de los encabezados en tu base de datos
-    console.log(this.headers);
-    this.isEditModeEnabled = false;
-  }
-
   public invalidField(campo: string): boolean {
     return (this.formPonderado.get(campo)?.invalid && this.formPonderado.get(campo)?.touched) ? true : false;
   }
+
+  // isEditModeEnabled: boolean = false;
+  // headers: string[] = ['ÁREA', 'Lectura Crítica', 'Ciencias Naturales', 'Ciencias Sociales', 'Matemáticas', 'Inglés', 'Su Puntaje Ponderado', 'Puntaje de Cierre 2022-II', 'Puntaje de Cierre 2023-I'];
+
+  // enableEditMode() {
+  //   this.isEditModeEnabled = true;
+  // }
+
+  // saveHeaders() {
+  //   // Aquí puedes realizar la lógica para guardar los nombres de los encabezados en tu base de datos
+  //   console.log(this.headers);
+  //   this.isEditModeEnabled = false;
+  // }
+
 }
