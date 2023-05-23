@@ -3,7 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthRoutingModule } from './auth/auth-routing.module';
 import { PagesRoutingModule } from './pages/pages-routing.module';
 
-const routes: Routes = [{path:'', redirectTo: '/home', pathMatch: 'full'}
+const routes: Routes = [
+  {path:'', redirectTo: '/home', pathMatch: 'full'},
+  {path:'**', redirectTo: '/home', pathMatch: 'full'},
+
 ];
 
 @NgModule({

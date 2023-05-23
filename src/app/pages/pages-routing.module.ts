@@ -14,21 +14,25 @@ import { EditCareerComponent } from './edit-career/edit-career.component';
 import { EditTestComponent } from './edit-test/edit-test.component';
 import { GlobalChartComponent } from './global-chart/global-chart.component';
 
+import { AuthGuard } from '../guards/auth.guard';
+
 const routes: Routes = [{
   path:'home', component: PagesComponent,
   children:[
     {path: '', component: HomeComponent},
-    {path: 'survey', component: SurveyComponent},
-    {path: 'simulator', component: SimulatorComponent},
-    {path: 'charts', component: ChartsComponent},
-    {path: 'important-info', component: ImportantInfoComponent},
-    {path: 'edit-chart', component: EditChartsComponent},
+    {path: 'survey', component: SurveyComponent, canActivate: [AuthGuard]},
+    {path: 'simulator', component: SimulatorComponent, canActivate: [AuthGuard]},
+    {path: 'charts', component: ChartsComponent, canActivate: [AuthGuard]},
+    {path: 'important-info', component: ImportantInfoComponent, canActivate: [AuthGuard]},
+    
+    {path: 'edit-charts', component: EditChartsComponent},
     {path: 'admin-edit', component: AdminEditComponent},
     {path: 'student-list', component: StudentListComponent},
     {path: 'student-results', component: StudentResultsComponent},
     {path: 'edit-career', component: EditCareerComponent},
     {path: 'edit-test', component: EditTestComponent},
-    {path: 'global-chart', component: GlobalChartComponent}
+    {path: 'global-chart', component: GlobalChartComponent},
+    
   ]
 }];
 
