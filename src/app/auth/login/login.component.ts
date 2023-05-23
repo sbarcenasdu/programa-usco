@@ -9,7 +9,6 @@ import Swal from 'sweetalert2';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [LoginGuard]
 })
 export class LoginComponent implements OnInit {
   constructor(
@@ -41,10 +40,12 @@ export class LoginComponent implements OnInit {
         if (resp[0].role === 'ADMIN') {
           this.authSrv.isSD = false;
           this.authSrv.setAdminUser(true);
+          localStorage.setItem('isAdminLoggedIn', 'true');
           this.router.navigateByUrl('/home/admin-edit');
         }
         else {
           localStorage.setItem('userDocument', resp[0].userDocument);
+          localStorage.setItem('isStandardLoggedIn', 'true');
           setTimeout(() => {
             this.router.navigateByUrl('/home/charts');
           }, 300);

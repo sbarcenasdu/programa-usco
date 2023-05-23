@@ -3,10 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterService } from 'src/app/services/register.service';
 import Swal from 'sweetalert2';
-import { RegisterResponse } from './register-response.interface';
 import { SurveyService } from 'src/app/services/survey.service';
-
-
 
 @Component({
   selector: 'app-register',
@@ -44,13 +41,10 @@ export class RegisterComponent {
     this.regSrv.registerUser(this.registerForm.value).subscribe(
       (resp: any) => {
         console.log(resp);
-        // const idUser = (resp as RegisterResponse).idUser;
-        // const userDocument = (resp as RegisterResponse).idUser;
         this.surveySrv.userDocument = resp.userDocument;
         console.log(this.surveySrv.userDocument);
-        
-        //const userDocument = (resp as RegisterResponse).userDocument;
-        //localStorage.clear();
+        localStorage.setItem('isStandardLoggedIn', 'true');
+
         //localStorage.setItem('userDocument', userDocument.toString());
         Swal.fire('Éxito', 'Registro exitoso', 'success');
         setTimeout(() => {

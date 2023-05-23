@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import { tap } from 'rxjs/operators';
+
 
 const URL: string = environment.URL_API;
 
@@ -14,7 +16,7 @@ export class SimulatorService {
   constructor(private http: HttpClient) { }
 
   calcularPonderado(formData: any) {
-    const json = 
+    const json =
     {
       "lecturaCritica": parseInt(formData.lecturaCritica),
       "cienciasNaturales": parseInt(formData.cienciasNaturales),
@@ -22,9 +24,13 @@ export class SimulatorService {
       "matematicas": parseInt(formData.matematicas),
       "ingles": parseInt(formData.ingles)
     }
-
     return this.http.post(`${URL}/v1/career/ponderados`, json).pipe(
-      map(resp => resp)
+      tap((resp: any) => {
+        return resp.sort((a: any, b: any) => a.title.localeCompare(b.title));
+      })
     );
+    // return this.http.post(`${URL}/v1/career/ponderados`, json).pipe(
+    //   map(resp => resp)
+    // );
   }
 }

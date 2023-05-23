@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 
@@ -31,8 +31,13 @@ export class AdminService {
   }
 
   getCareers() {
+    // return this.http.get(`${URL}/v1/career`).pipe(
+    //   map(resp => resp));
     return this.http.get(`${URL}/v1/career`).pipe(
-      map(resp => resp));
+      tap((resp: any) => {
+        return resp.sort((a: any, b: any) => a.title.localeCompare(b.title));
+      })
+    );
   }
 
   addCareer(formData: any) {

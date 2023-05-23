@@ -10,7 +10,7 @@ const BASE_URL: String = environment.URL_API;
 })
 export class AuthService {
 
-  private isAuthenticated: boolean = false;
+  private isAuthenticated: boolean = false;//cyn
 
   public httpOptions: any = {};
   isAdmin: boolean = false;

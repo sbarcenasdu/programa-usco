@@ -81,7 +81,6 @@ export class EditChartsComponent {
     console.log(this.modalForm.value);
     this.adminSrv.addCareer(this.modalForm.value).subscribe(
       (resp: any) => {
-        console.log(resp);
         Swal.fire('Éxito', 'Carrera agregada exitosamente', 'success');
         // window.location.reload();
         this.refreshData();

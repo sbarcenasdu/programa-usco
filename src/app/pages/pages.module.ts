@@ -20,6 +20,9 @@ import { StudentResultsComponent } from './student-results/student-results.compo
 import { EditCareerComponent } from './edit-career/edit-career.component';
 import { EditTestComponent } from './edit-test/edit-test.component';
 import { GlobalChartComponent } from './global-chart/global-chart.component';
+import { AuthService } from '../services/auth.service';
+
+
 
 @NgModule({
   declarations: [
@@ -49,6 +52,7 @@ import { GlobalChartComponent } from './global-chart/global-chart.component';
   ],
   exports: [
     PagesComponent
-  ]
+  ],
+ providers: [AuthService]
 })
 export class PagesModule { }
