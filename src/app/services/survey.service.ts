@@ -27,7 +27,6 @@ export class SurveyService {
   }
 
   realiceSurvey(formData: any) {
-    console.log(formData);    
     const json = formData.map((data: any) => ({
       carrera: data.carrera,
       puntaje: data.puntaje

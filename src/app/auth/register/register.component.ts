@@ -40,9 +40,7 @@ export class RegisterComponent {
 
     this.regSrv.registerUser(this.registerForm.value).subscribe(
       (resp: any) => {
-        console.log(resp);
         this.surveySrv.userDocument = resp.userDocument;
-        console.log(this.surveySrv.userDocument);
         localStorage.setItem('isStandardLoggedIn', 'true');
 
         //localStorage.setItem('userDocument', userDocument.toString());

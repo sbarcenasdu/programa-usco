@@ -50,7 +50,6 @@ export class EditChartsComponent {
     this.adminSrv.getCareers().subscribe(
       (resp: any) => {
         this.careers = resp;
-        console.log(resp);
         for (let i = 0; i < resp.length; i++) {
 
           const fieldName1 = `lecturaCritica${i + 1}`
@@ -78,7 +77,6 @@ export class EditChartsComponent {
   }
 
   addCareer() {
-    console.log(this.modalForm.value);
     this.adminSrv.addCareer(this.modalForm.value).subscribe(
       (resp: any) => {
         Swal.fire('Éxito', 'Carrera agregada exitosamente', 'success');
@@ -103,7 +101,6 @@ export class EditChartsComponent {
       if (result.isConfirmed) {
         this.adminSrv.updateCareer(careerData, this.formPonderado.value, i).subscribe(
           (resp: any) => {
-            console.log(resp);
             // window.location.reload();
             this.refreshData();
           },
@@ -116,7 +113,6 @@ export class EditChartsComponent {
   }
 
   deleteCareer(careerID: any) {
-    console.log(careerID);
     Swal.fire({
       title: 'Confirmar acción',
       text: '¿Estás seguro de continuar?',
@@ -128,7 +124,6 @@ export class EditChartsComponent {
       if (result.isConfirmed) {
         this.adminSrv.deleteCareer(careerID).subscribe(
           (resp: any) => {
-            console.log(resp);
             // window.location.reload();
             this.refreshData();
 
@@ -139,6 +134,14 @@ export class EditChartsComponent {
         );
       }
     });
+  }
+
+  validateNumber(event: Event) {
+    const input = event.target as HTMLInputElement;
+    const value = Number(input.value);
+    if (value > 100 || value < 0 || isNaN(value) || value.toString().length > 5) {
+      input.value = '';
+    }
   }
 
   public invalidField(campo: string): boolean {

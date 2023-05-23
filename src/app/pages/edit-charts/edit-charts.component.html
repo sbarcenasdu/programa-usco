@@ -29,21 +29,21 @@
                 <td>{{ career.title }}</td>
                 <!-- <td contenteditable="true" (input)="updateCellValue($event, 'lecturaCritica', career)">{{ career.lecturaCritica }}</td> -->
                 <td><input class="rounded border-0 text-center px-2 py-1" type="number"
-                    formControlName="lecturaCritica{{i + 1}}" style="width: 55px;"></td>
+                    formControlName="lecturaCritica{{i + 1}}" style="width: 55px;" (input)="validateNumber($event)"></td>
                 <td><input class="rounded border-0 text-center px-2 py-1" type="number"
-                    formControlName="cienciasNaturales{{i + 1}}" style="width: 55px;"></td>
+                    formControlName="cienciasNaturales{{i + 1}}" style="width: 55px;" (input)="validateNumber($event)"></td>
                 <td><input class="rounded border-0 text-center px-2 py-1" type="number"
-                    formControlName="cienciasSociales{{i + 1}}" style="width: 55px;"></td>
+                    formControlName="cienciasSociales{{i + 1}}" style="width: 55px;" (input)="validateNumber($event)"></td>
                 <td><input class="rounded border-0 text-center px-2 py-1" type="number"
-                    formControlName="matematicas{{i + 1}}" style="width: 55px;"></td>
+                    formControlName="matematicas{{i + 1}}" style="width: 55px;" (input)="validateNumber($event)"></td>
                 <td><input class="rounded border-0 text-center px-2 py-1" type="number"
-                    formControlName="ingles{{i + 1}}" style="width: 55px;"></td>
+                    formControlName="ingles{{i + 1}}" style="width: 55px;" (input)="validateNumber($event)"></td>
                 <td><input class="rounded border-0 text-center px-2 py-1" type="number"
-                    formControlName="puntajePonderado{{i + 1}}" style="width: 55px;"></td>
+                    formControlName="puntajePonderado{{i + 1}}" style="width: 55px;" (input)="validateNumber($event)"></td>
                 <td><input class="rounded border-0 text-center px-2 py-1" type="number"
-                    formControlName="puntaCorte1{{i + 1}}" style="width: 55px;"></td>
+                    formControlName="puntaCorte1{{i + 1}}" style="width: 55px;" (input)="validateNumber($event)"></td>
                 <td><input class="rounded border-0 text-center px-2 py-1" type="number"
-                    formControlName="puntaCorte2{{i + 1}}" style="width: 55px;"></td>
+                    formControlName="puntaCorte2{{i + 1}}" style="width: 55px;" (input)="validateNumber($event)"></td>
                 <td>
                   <span class="table-remove"><button type="button" class="btn btn-warning btn-rounded text-dark btn-sm my-0"
                       (click)="updateCareer(career, i)">Editar</button>
@@ -73,31 +73,31 @@
               <div class="form-row">
                 <div class="form-group col-md-4">
                   <label for="lecturaCritica">Lectura Crítica:</label>
-                  <input type="number" id="lecturaCritica" class="form-control" formControlName="lecturaCritica">
+                  <input  (input)="validateNumber($event)" type="number" id="lecturaCritica" class="form-control" formControlName="lecturaCritica">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="cienciasNaturales">Ciencias Naturales:</label>
-                  <input type="number" id="cienciasNaturales" class="form-control" formControlName="cienciasNaturales">
+                  <input  (input)="validateNumber($event)" type="number" id="cienciasNaturales" class="form-control" formControlName="cienciasNaturales">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="cienciasSociales">Ciencias Sociales:</label>
-                  <input type="number" id="cienciasSociales" class="form-control" formControlName="cienciasSociales">
+                  <input  (input)="validateNumber($event)" type="number" id="cienciasSociales" class="form-control" formControlName="cienciasSociales">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="matematicas">Matemáticas:</label>
-                  <input type="number" id="matematicas" class="form-control" formControlName="matematicas">
+                  <input  (input)="validateNumber($event)" type="number" id="matematicas" class="form-control" formControlName="matematicas">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="ingles">Inglés:</label>
-                  <input type="number" id="ingles" class="form-control" formControlName="ingles">
+                  <input  (input)="validateNumber($event)" type="number" id="ingles" class="form-control" formControlName="ingles">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="puntaCorte1">Puntaje de Corte 1:</label>
-                  <input type="number" id="puntaCorte1" class="form-control" formControlName="puntaCorte1">
+                  <input  (input)="validateNumber($event)" type="number" id="puntaCorte1" class="form-control" formControlName="puntaCorte1">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="puntaCorte2">Puntaje de Corte 2:</label>
-                  <input type="number" id="puntaCorte2" class="form-control" formControlName="puntaCorte2">
+                  <input  (input)="validateNumber($event)" type="number" id="puntaCorte2" class="form-control" formControlName="puntaCorte2">
                 </div>
               </div>
               <button type="submit" class="btn btn-primary">Agregar</button>

@@ -28,17 +28,6 @@ export class EditTestComponent {
     private adminSrv: AdminService
   ) { }
 
-  // addProgram() {
-  //   this.adminSrv.addProgram(this.formPonderado.value).subscribe(
-  //     (resp: any) => {
-  //       console.log(resp);
-  //     },
-  //     (err) => {
-  //       console.log(err);
-  //     }
-  //   );
-  // }
-
   public campoNoValido(campo: string): boolean {
     if (this.formPonderado.get(campo)?.invalid && this.formPonderado.get(campo)?.touched) {
       return true;

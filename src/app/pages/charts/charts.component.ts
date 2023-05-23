@@ -24,11 +24,8 @@ export class ChartsComponent implements OnInit {
     this.userDocument = localStorage.getItem('userDocument');
     this.studentData = localStorage.getItem('studentData');
 
-    // desde ADMIN consulta por cedula STUDENT-RESULTS
     if (this.studentData !== null) {
-      this.dataSurvey = JSON.parse(this.studentData);//[{}...]
-      console.log(this.dataSurvey);
-      // console.log(this.dataSurvey[0].carrera);
+      this.dataSurvey = JSON.parse(this.studentData);
       for (const key in this.dataSurvey) {
         if (Object.prototype.hasOwnProperty.call(this.dataSurvey, key)) {
           const element = this.dataSurvey[key];
@@ -38,7 +35,7 @@ export class ChartsComponent implements OnInit {
       }
       this.renderData();
     }
-    //desde SURVEY
+
     else if (this.surveySrv.porcentajes.length > 0) {
       this.porcentajes = this.surveySrv.porcentajes;
       this.carreras = this.surveySrv.carreras;
@@ -120,22 +117,5 @@ export class ChartsComponent implements OnInit {
         }
       }
     });
-  }
-
-  getValuesLocalStorage(): number[] {
-    const respLocalStorage = localStorage.getItem('survey');
-    if (!respLocalStorage) {
-      console.log('No se encontraron valores en el LocalStorage.');
-      return [];
-    }
-    try {
-      const respuestaObjeto = JSON.parse(respLocalStorage);
-      const data = respuestaObjeto.map((item: any) => parseFloat(item.respuesta));
-      console.log('Valores almacenados en el array "data":', data);
-      return data;
-    } catch (error) {
-      console.error('Error al parsear los valores del LocalStorage:', error);
-      return [];
-    }
   }
 }

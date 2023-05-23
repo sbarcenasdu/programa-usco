@@ -40,12 +40,10 @@ export class SurveyComponent {
   // }
 
   registerSurvey() {
-    console.log(this.surveyForm.value);
     const transformedData = Object.values(this.surveyForm.value).map((value: any) => {
       const { program, option } = value;
       return { carrera: program, puntaje: 5 - parseFloat(option) };
     });
-    console.log(transformedData);
     this.surveySrv.realiceSurvey(transformedData).subscribe(
       (response: any) => {
         const porcentajes: Array<any> = [];

@@ -29,7 +29,6 @@ export class GlobalChartComponent {
   getGlobalData() {
     this.adminSrv.getGlobalData().subscribe(
       (resp: any) => {
-        console.log(resp);
         this.globalData = resp;
         for (let index = 0; index < resp.length; index++) {
           const element = resp[index];
@@ -37,8 +36,6 @@ export class GlobalChartComponent {
           this.carreras.push(element.carrera);
         }
         this.renderData(this.puntajes);
-        console.log(this.puntajes);
-        console.log(this.carreras);
         
       },
       (error) => {

@@ -21,7 +21,6 @@ export class StudentResultsComponent {
   searchData() {
     this.adminSrv.getStudentData(this.searchTerm).subscribe(
       (resp: any) => {
-        console.log(resp);
         if (resp.length === 0) {
           Swal.fire('No se encontraron resultados', '', 'info');
           return;

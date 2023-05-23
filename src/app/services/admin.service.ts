@@ -85,12 +85,9 @@ export class AdminService {
         }
       }
     }
-    console.log(json);
 
     json.title = career.title;
     json.faculty = career.faculty.id;
-    console.log(json);
-
     return this.http.put(`${URL}/v1/career/${career.id}`, json).pipe(
       map(resp => resp));
   }

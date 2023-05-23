@@ -26,7 +26,6 @@ export class StudentListComponent {
   public getAllStudents() {
     this.adminSrv.getAllStudents().subscribe(
       (response: any) => {
-        console.log(response);
         this.students = response;
       },
       (err) => {
