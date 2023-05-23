@@ -39,15 +39,16 @@
                                 <td>{{ data.puntaje | number:'1.2-2' }}%</td>
                                 <td *ngIf="data.puntaje < 20">Afinidad baja</td>
                                 <td *ngIf="data.puntaje >= 20 && data.puntaje < 60">Afinidad media</td>
-                                <td *ngIf="data.puntaje >= 60 && data.puntaje < 80"><b class="text-primary">Afinidad alta</b></td>
+                                <td *ngIf="data.puntaje >= 60 && data.puntaje < 80"><b class="text-primary">Afinidad
+                                        alta</b></td>
                                 <td *ngIf="data.puntaje >= 80"><b class="text-success">Afinidad muy alta</b></td>
                             </tr>
                         </tbody>
-                        <div class="d-flex justify-content-center">
-                            <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
-                                nextLabel="Siguiente"></pagination-controls>
-                        </div>
                     </table>
+                    <div class="d-flex justify-content-center">
+                        <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
+                            nextLabel="Siguiente"></pagination-controls>
+                    </div>
                 </div>
             </div>
         </div>

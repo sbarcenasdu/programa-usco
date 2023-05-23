@@ -20,7 +20,7 @@
           </thead>
           <tbody>
 
-            <tr *ngFor="let student of students">
+            <tr *ngFor="let student of students | paginate: { itemsPerPage: 10, currentPage: p }">
               <td class="pt-3-half text-start">{{student.userName}}</td>
               <td class="pt-3-half">{{student.userDocument}}</td>
               <td class="pt-3-half">{{student.cellphone}}</td>
@@ -28,10 +28,14 @@
             </tr>
           </tbody>
         </table>
+        <div class="d-flex justify-content-center">
+          <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
+            nextLabel="Siguiente"></pagination-controls>
+        </div>
       </div>
     </div>
   </div>
   <div class="p-4">
-    <a routerLink="../admin-edit" class="btn btn-primary text-decoration-none"> Atrás</a>
+    <a routerLink="../admin-edit" class="btn btn-primary text-decoration-none">Inicio</a>
   </div>
 </div>

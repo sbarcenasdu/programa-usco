@@ -1,23 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginGuard } from 'src/app/guards/check-login.guard';
 import { AuthService } from 'src/app/services/auth.service';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [LoginGuard]
 })
 export class LoginComponent implements OnInit {
-
-  public formSubmitted: Boolean = false;
-
-  public loginForm = this.fb.group({
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(8)]]
-  });
-
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -27,6 +21,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  public formSubmitted: Boolean = false;
+
+  public loginForm = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(8)]]
+  });
 
   login() {
     this.formSubmitted = true;

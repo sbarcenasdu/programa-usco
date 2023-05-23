@@ -1,15 +1,13 @@
-<!-- Editable table -->
-<div class="container">
-    <div class="card">
-      <div>
-        <h3 class="card-header text-center font-weight-bold text-uppercase py-4">
-          PRUEBA DE ORIENTACIÓN PROFESIONAL
-        </h3>
-      </div>
-      <div class="card-body">
-        <div id="table" class="table-editable">
-          <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i class="fas fa-plus fa-2x"
-                aria-hidden="true"></i></a></span>
+<div class="container rounded p-4 bg-usco-ocre mb-4">
+  <div class="card">
+    <div>
+      <h3 class="card-header text-center font-weight-bold text-uppercase py-4">
+        ACTUALIZACIÓN PRUEBA DE ORIENTACIÓN PROFESIONAL
+      </h3>
+    </div>
+    <div class="card-body">
+      <div id="table">
+        <form role="form" [formGroup]="formPonderado">
           <table class="table table-bordered table-responsive-md table-striped text-center">
             <thead>
               <tr>
@@ -23,148 +21,91 @@
                 <th class="text-center">Puntaje de Cierre 2022-II</th>
                 <th class="text-center">Puntaje de Cierre 2023-I</th>
                 <th *ngIf="true" class="text-center">Editar</th>
+                <th *ngIf="true" class="text-center">Borrar</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td class="pt-3-half text-start" contenteditable="true">Matemática Aplicada</td>
-                <td class="pt-3-half" contenteditable="true">30%</td>
-                <td class="pt-3-half" contenteditable="true">25%</td>
-                <td class="pt-3-half" contenteditable="true">0%</td>
-                <td class="pt-3-half" contenteditable="true">35%</td>
-                <td class="pt-3-half" contenteditable="true">10%</td>
-                <td class="pt-3-half" contenteditable="true">calc</td>
-                <td class="pt-3-half" contenteditable="true">text</td>
-                <td class="pt-3-half" contenteditable="true">number</td>
-                <td *ngIf="true">
-                  <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">
-                      Editar
-                    </button></span>
+              <tr *ngFor="let career of careers; let i= index">
+                <td>{{ career.title }}</td>
+                <!-- <td contenteditable="true" (input)="updateCellValue($event, 'lecturaCritica', career)">{{ career.lecturaCritica }}</td> -->
+                <td><input class="rounded border-0 text-center px-2 py-1" type="number"
+                    formControlName="lecturaCritica{{i + 1}}" style="width: 55px;"></td>
+                <td><input class="rounded border-0 text-center px-2 py-1" type="number"
+                    formControlName="cienciasNaturales{{i + 1}}" style="width: 55px;"></td>
+                <td><input class="rounded border-0 text-center px-2 py-1" type="number"
+                    formControlName="cienciasSociales{{i + 1}}" style="width: 55px;"></td>
+                <td><input class="rounded border-0 text-center px-2 py-1" type="number"
+                    formControlName="matematicas{{i + 1}}" style="width: 55px;"></td>
+                <td><input class="rounded border-0 text-center px-2 py-1" type="number"
+                    formControlName="ingles{{i + 1}}" style="width: 55px;"></td>
+                <td><input class="rounded border-0 text-center px-2 py-1" type="number"
+                    formControlName="puntajePonderado{{i + 1}}" style="width: 55px;"></td>
+                <td><input class="rounded border-0 text-center px-2 py-1" type="number"
+                    formControlName="puntaCorte1{{i + 1}}" style="width: 55px;"></td>
+                <td><input class="rounded border-0 text-center px-2 py-1" type="number"
+                    formControlName="puntaCorte2{{i + 1}}" style="width: 55px;"></td>
+                <td>
+                  <span class="table-remove"><button type="button" class="btn btn-warning btn-rounded text-dark btn-sm my-0"
+                      (click)="updateCareer(career, i)">Editar</button>
+                  </span>
                 </td>
-              </tr>
-              <tr>
-                <td class="pt-3-half text-start" contenteditable="true">Física</td>
-                <td class="pt-3-half" contenteditable="true">15%</td>
-                <td class="pt-3-half" contenteditable="true">50%</td>
-                <td class="pt-3-half" contenteditable="true">0%</td>
-                <td class="pt-3-half" contenteditable="true">30%</td>
-                <td class="pt-3-half" contenteditable="true">5%</td>
-                <td class="pt-3-half" contenteditable="true">calc</td>
-                <td class="pt-3-half" contenteditable="true">text</td>
-                <td class="pt-3-half" contenteditable="true">number</td>
-                <td *ngIf="true">
-                  <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">
-                      Editar
-                    </button></span>
-                </td>
-              </tr>
-              <tr>
-                <td class="pt-3-half text-start" contenteditable="true">Biología Aplicada</td>
-                <td class="pt-3-half" contenteditable="true">25%</td>
-                <td class="pt-3-half" contenteditable="true">55%</td>
-                <td class="pt-3-half" contenteditable="true">0%</td>
-                <td class="pt-3-half" contenteditable="true">10%</td>
-                <td class="pt-3-half" contenteditable="true">10%</td>
-                <td class="pt-3-half" contenteditable="true">calc</td>
-                <td class="pt-3-half" contenteditable="true">text</td>
-                <td class="pt-3-half" contenteditable="true">number</td>
-                <td *ngIf="true">
-                  <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">
-                      Editar
-                    </button></span>
-                </td>
-              </tr>
-              <tr>
-                <td class="pt-3-half text-start" contenteditable="true">Derecho (Diurna)</td>
-                <td class="pt-3-half" contenteditable="true">55%</td>
-                <td class="pt-3-half" contenteditable="true">0%</td>
-                <td class="pt-3-half" contenteditable="true">20%</td>
-                <td class="pt-3-half" contenteditable="true">10%</td>
-                <td class="pt-3-half" contenteditable="true">15%</td>
-                <td class="pt-3-half" contenteditable="true">calc</td>
-                <td class="pt-3-half" contenteditable="true">text</td>
-                <td class="pt-3-half" contenteditable="true">number</td>
-                <td *ngIf="true">
-                  <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">
-                      Editar
-                    </button></span>
-                </td>
-              </tr>
-              <tr>
-                <td class="pt-3-half text-start" contenteditable="true">Derecho (Diurna)</td>
-                <td class="pt-3-half" contenteditable="true">55%</td>
-                <td class="pt-3-half" contenteditable="true">0%</td>
-                <td class="pt-3-half" contenteditable="true">20%</td>
-                <td class="pt-3-half" contenteditable="true">10%</td>
-                <td class="pt-3-half" contenteditable="true">15%</td>
-                <td class="pt-3-half" contenteditable="true">calc</td>
-                <td class="pt-3-half" contenteditable="true">text</td>
-                <td class="pt-3-half" contenteditable="true">number</td>
-                <td *ngIf="true">
-                  <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">
-                      Editar
-                    </button></span>
-                </td>
-              </tr>
-              <tr>
-                <td class="pt-3-half text-start" contenteditable="true">Derecho (Diurna)</td>
-                <td class="pt-3-half" contenteditable="true">55%</td>
-                <td class="pt-3-half" contenteditable="true">0%</td>
-                <td class="pt-3-half" contenteditable="true">20%</td>
-                <td class="pt-3-half" contenteditable="true">10%</td>
-                <td class="pt-3-half" contenteditable="true">15%</td>
-                <td class="pt-3-half" contenteditable="true">calc</td>
-                <td class="pt-3-half" contenteditable="true">text</td>
-                <td class="pt-3-half" contenteditable="true">number</td>
-                <td *ngIf="true">
-                  <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">
-                      Editar
-                    </button></span>
-                </td>
-              </tr>
-              <tr>
-                <td class="pt-3-half text-start" contenteditable="true">Derecho (Diurna)</td>
-                <td class="pt-3-half" contenteditable="true">55%</td>
-                <td class="pt-3-half" contenteditable="true">0%</td>
-                <td class="pt-3-half" contenteditable="true">20%</td>
-                <td class="pt-3-half" contenteditable="true">10%</td>
-                <td class="pt-3-half" contenteditable="true">15%</td>
-                <td class="pt-3-half" contenteditable="true">calc</td>
-                <td class="pt-3-half" contenteditable="true">text</td>
-                <td class="pt-3-half" contenteditable="true">number</td>
-                <td *ngIf="true">
-                  <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">
-                      Editar
-                    </button></span>
-                </td>
-              </tr>
-              <tr>
-                <td class="pt-3-half text-start" contenteditable="true">Derecho (Diurna)</td>
-                <td class="pt-3-half" contenteditable="true">55%</td>
-                <td class="pt-3-half" contenteditable="true">0%</td>
-                <td class="pt-3-half" contenteditable="true">20%</td>
-                <td class="pt-3-half" contenteditable="true">10%</td>
-                <td class="pt-3-half" contenteditable="true">15%</td>
-                <td class="pt-3-half" contenteditable="true">calc</td>
-                <td class="pt-3-half" contenteditable="true">text</td>
-                <td class="pt-3-half" contenteditable="true">number</td>
-                <td *ngIf="true">
-                  <span class="table-remove"><button type="button" class="btn btn-success btn-rounded btn-sm my-0">
-                      Crear
-                    </button></span>
-                </td>
+                <!-- <td>
+                  <span class="table-remove">
+                    <button type="button" class="btn btn-danger btn-rounded btn-sm my-0"
+                      (click)="deleteCareer(career.id)">
+                      <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                  </span>
+                </td> -->
               </tr>
             </tbody>
           </table>
-        </div>
-        <div class="d-flex justify-content-center p-2">
-          <a routerLink="../../home">
-            <button type="button" class="btn btn-primary text-white fw-semibold">Agregar Programa</button>
-          </a>
-          
+        </form>
+        <!-- Tarjeta para agregar una carrera -->
+        <div class="card mx-auto mt-5 border-secondary text-dark" style="max-width:80%;">
+          <div class="card-body">
+            <h5 class="card-title">Agregar Carrera</h5>
+            <form [formGroup]="modalForm" (ngSubmit)="addCareer()">
+              <div class="form-group">
+                <label for="title">Título:</label>
+                <input type="text" id="title" class="form-control" formControlName="title">
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="lecturaCritica">Lectura Crítica:</label>
+                  <input type="number" id="lecturaCritica" class="form-control" formControlName="lecturaCritica">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="cienciasNaturales">Ciencias Naturales:</label>
+                  <input type="number" id="cienciasNaturales" class="form-control" formControlName="cienciasNaturales">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="cienciasSociales">Ciencias Sociales:</label>
+                  <input type="number" id="cienciasSociales" class="form-control" formControlName="cienciasSociales">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="matematicas">Matemáticas:</label>
+                  <input type="number" id="matematicas" class="form-control" formControlName="matematicas">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="ingles">Inglés:</label>
+                  <input type="number" id="ingles" class="form-control" formControlName="ingles">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="puntaCorte1">Puntaje de Corte 1:</label>
+                  <input type="number" id="puntaCorte1" class="form-control" formControlName="puntaCorte1">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="puntaCorte2">Puntaje de Corte 2:</label>
+                  <input type="number" id="puntaCorte2" class="form-control" formControlName="puntaCorte2">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Agregar</button>
+            </form>
+          </div>
         </div>
       </div>
-    
     </div>
   </div>
-  <!-- Editable table -->
+
+</div>

@@ -38,15 +38,16 @@
                                 <td>{{ item.porcentaje | number:'1.2-2' }}%</td>
                                 <td *ngIf="item.porcentaje < 20">Afinidad baja</td>
                                 <td *ngIf="item.porcentaje >= 20 && item.porcentaje < 60">Afinidad media</td>
-                                <td *ngIf="item.porcentaje >= 60 && item.porcentaje < 80"><b class="text-primary">Afinidad alta</b></td>
+                                <td *ngIf="item.porcentaje >= 60 && item.porcentaje < 80"><b
+                                        class="text-primary">Afinidad alta</b></td>
                                 <td *ngIf="item.porcentaje >= 80"><b class="text-success">Afinidad muy alta</b></td>
                             </tr>
                         </tbody>
-                        <div class="d-flex justify-content-center">
-                            <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
-                                nextLabel="Siguiente"></pagination-controls>
-                        </div>
                     </table>
+                    <div class="d-flex justify-content-center">
+                        <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
+                            nextLabel="Siguiente"></pagination-controls>
+                    </div>
                 </div>
             </div>
         </div>

@@ -35,3 +35,16 @@
   text-align: center;
   border-top: 1px solid #e3e6f0;
 }
+
+.bg-yellow{
+  background-color: #ffee00;
+}
+.bg-usco-redwine{
+  background-color: rgb(198,140,142);
+}
+.bg-usco-red{
+  background-color: rgb(223, 89, 94);
+}
+.text-usco-red{
+  color: rgb(141,25,29);
+}

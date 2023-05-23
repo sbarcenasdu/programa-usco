@@ -15,11 +15,13 @@ export class StudentListComponent {
   ) {
   }
 
-  students = Array<any>();
-
   ngOnInit() {
     this.getAllStudents();
   }
+  
+  students = Array<any>();
+  p: number = 1;
+  collection: any[] = [];
 
   public getAllStudents() {
     this.adminSrv.getAllStudents().subscribe(

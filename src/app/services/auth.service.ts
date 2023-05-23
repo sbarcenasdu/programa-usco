@@ -10,13 +10,13 @@ const BASE_URL: String = environment.URL_API;
 })
 export class AuthService {
 
+  private isAuthenticated: boolean = false;
+
   public httpOptions: any = {};
   isAdmin: boolean = false;
   isSD: boolean = false;
 
-  constructor(
-    private http: HttpClient
-  ) {
+  constructor(private http: HttpClient) {
     this.httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
   }
 
@@ -26,9 +26,15 @@ export class AuthService {
       password: formData.password
     }
     return this.http.post(`${BASE_URL}/v1/user/autenticar`, json, this.httpOptions).pipe(
+      tap(() => {
+        this.isAuthenticated = true;
+      }),
       map(resp => resp)
-    )
+    );
   }
 
-  
+  isLoggedIn(): boolean {
+    return this.isAuthenticated;
+  }
+
 }

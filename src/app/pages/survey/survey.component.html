@@ -10,8 +10,8 @@
             resultados. Se aclara que la realización de la prueba no está relacionada con el proceso de matrícula de la
             Universidad Surcolombiana, por lo tanto el aplicativo solo sirve como herramienta orientadora para nuestros
             futuros estudiantes. <br>
-            <a href="https://www.usco.edu.co/es/ingreso-a-la-usco/" class=""
-            target="_new">Click aquí para más información sobre pregrados</a>
+            <a href="https://www.usco.edu.co/es/ingreso-a-la-usco/" class="" target="_new">Click aquí para más
+                información sobre pregrados</a>
         </p>
     </div>
 
@@ -59,12 +59,13 @@
             </div>
         </div>
     </form>
-    <div class="d-flex justify-content-end p-3 pr-5">
-        <!-- <a routerLink="../charts"> -->
-        <button [disabled]="surveyForm.invalid" (click)="registerSurvey()" type="button"
-            class="btn btn-primary mx-auto mr-lg-5" id="submitButton">Realizar encuesta</button>
-            <div class="text-danger">
-                <small *ngIf="">*El correo es obligatorio</small>
-            </div>
+    <div class="d-flex justify-content-end p-3 pr-5 gap-3 align-items-center">
+        <div class="text-danger">
+            <small *ngIf="surveyForm.invalid">*Debes responder todas las preguntas</small>
+        </div>
+        <div>
+            <button [disabled]="surveyForm.invalid" (click)="registerSurvey()" type="button"
+                class="btn btn-primary mx-auto mr-lg-5" id="submitButton">Realizar encuesta</button>
+        </div>
     </div>
 </div>

@@ -19,8 +19,8 @@ export class EditTestComponent {
     matematicas: new FormControl(0),
     ingles: new FormControl(0),
     puntPoderado: new FormControl(0),
-    puntCierre1: new FormControl(0),
-    puntCierre2: new FormControl(0),
+    puntaCorte1: new FormControl(0),
+    puntaCorte2: new FormControl(0),
   });
 
   constructor(
@@ -28,16 +28,16 @@ export class EditTestComponent {
     private adminSrv: AdminService
   ) { }
 
-  addProgram() {
-    this.adminSrv.addProgram(this.formPonderado.value).subscribe(
-      (resp: any) => {
-        console.log(resp);
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
-  }
+  // addProgram() {
+  //   this.adminSrv.addProgram(this.formPonderado.value).subscribe(
+  //     (resp: any) => {
+  //       console.log(resp);
+  //     },
+  //     (err) => {
+  //       console.log(err);
+  //     }
+  //   );
+  // }
 
   public campoNoValido(campo: string): boolean {
     if (this.formPonderado.get(campo)?.invalid && this.formPonderado.get(campo)?.touched) {

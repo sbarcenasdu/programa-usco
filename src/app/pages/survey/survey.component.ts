@@ -12,17 +12,23 @@ import { filter } from 'rxjs/operators';
 })
 
 export class SurveyComponent {
-  constructor(private fb: FormBuilder, private surveySrv: SurveyService, private router: Router) { }
+  constructor(
+    private fb: FormBuilder,
+    private surveySrv: SurveyService,
+    private router: Router
+  ) {
+    this.surveyForm = this.fb.group({});
+  }
 
   questions: Array<any> = [];
 
   ngOnInit() {
     this.loadQuestions();
     this.router.events
-    .pipe(filter(event => event instanceof NavigationEnd))
-    .subscribe(() => {
-      window.scrollTo(0, 0);
-    });
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        window.scrollTo(0, 0);
+      });
   }
 
   public surveyForm = this.fb.group({
@@ -36,7 +42,7 @@ export class SurveyComponent {
   registerSurvey() {
     console.log(this.surveyForm.value);
     const transformedData = Object.values(this.surveyForm.value).map((value: any) => {
-      const { program, option} = value;
+      const { program, option } = value;
       return { carrera: program, puntaje: 5 - parseFloat(option) };
     });
     console.log(transformedData);
