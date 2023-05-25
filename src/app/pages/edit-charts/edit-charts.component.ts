@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, FormsModule } from '@angular/forms';
+import { Router, NavigationEnd } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 import Swal from 'sweetalert2';
+import { filter } from 'rxjs/operators';
+
 
 
 
@@ -15,7 +18,8 @@ export class EditChartsComponent {
 
   constructor(
     private fb: FormBuilder,
-    private adminSrv: AdminService
+    private adminSrv: AdminService,
+    private router :Router
   ) {
     this.modalForm = this.fb.group({
       title: ['', Validators.required],
@@ -36,6 +40,11 @@ export class EditChartsComponent {
 
   ngOnInit(): void {
     this.getCareers();
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        window.scrollTo(0, 0);
+      });
   }
 
   public careers: any = [];
@@ -63,11 +72,11 @@ export class EditChartsComponent {
           const fieldName5 = `ingles${i + 1}`;
           this.formPonderado.addControl(fieldName5, this.fb.control((resp[i].ingles * 100).toFixed(2), Validators.required));
           const fieldName6 = `puntajePonderado${i + 1}`;
-          this.formPonderado.addControl(fieldName6, this.fb.control(resp[i].puntajePonderado, Validators.required));
+          this.formPonderado.addControl(fieldName6, this.fb.control(resp[i].puntajePonderado.toFixed(2), Validators.required));
           const fieldName7 = `puntaCorte1${i + 1}`;
-          this.formPonderado.addControl(fieldName7, this.fb.control(resp[i].puntaCorte1, Validators.required));
+          this.formPonderado.addControl(fieldName7, this.fb.control(resp[i].puntaCorte1.toFixed(2), Validators.required));
           const fieldName8 = `puntaCorte2${i + 1}`;
-          this.formPonderado.addControl(fieldName8, this.fb.control(resp[i].puntaCorte2, Validators.required));
+          this.formPonderado.addControl(fieldName8, this.fb.control(resp[i].puntaCorte2.toFixed(2), Validators.required));
         }
       },
       (err) => {
@@ -81,6 +90,7 @@ export class EditChartsComponent {
       (resp: any) => {
         Swal.fire('Éxito', 'Carrera agregada exitosamente', 'success');
         // window.location.reload();
+        this.modalForm.reset(); 
         this.refreshData();
       },
       (err) => {

@@ -12,7 +12,7 @@
           puntajes
           de cierre de los dos (2) últimos periodos académicos inmediatamente anterior</p>
       </div>
-      <div class="bg-yellow text-usco-red fw-semibold" style="height: 1.5rem;">
+      <div class="bg-yellow text-usco-red fw-semibold pt-2 px-2">
         <p class="mx-auto mx-md-5">
           ESTA ES UNA HERRAMIENTA DE ORIENTACIÓN, NO ES UNA GARANTÍA DE ADMISIÓN A LA UNIVERSIDAD SURCOLOMBIANA.
         </p>
@@ -20,7 +20,7 @@
       <div class="card-body">
         <div id="table" class="table-responsive-md">
           <form [formGroup]="formPonderado" (submit)="calcularPond($event)">
-            <table class="table table-bordered table-hover table-sm table-sorteable">
+            <table class="table table-bordered table-hover table-sm">
               <thead>
                 <tr>
                   <th class="text-center">ÁREA</th>
@@ -40,23 +40,23 @@
                     Ingrese aquí su puntaje ICFES
                   </td>
                   <td>
-                    <input class="text-center  rounded border-white" style="width: 55px" type="number"
+                    <input class="text-center rounded border-white" style="width: 90%" type="number"
                       formControlName="lecturaCritica" (input)="validateNumber($event)">
                   </td>
                   <td>
-                    <input class="text-center  rounded border-white" style="width: 55px" type="text"
+                    <input class="text-center rounded border-white" style="width: 90%" type="text"
                       formControlName="cienciasNaturales" (input)="validateNumber($event)">
                   </td>
                   <td>
-                    <input class="text-center  rounded border-white" style="width: 55px" type="text"
+                    <input class="text-center rounded border-white" style="width: 90%" type="text"
                       formControlName="cienciasSociales" (input)="validateNumber($event)">
                   </td>
                   <td>
-                    <input class="text-center  rounded border-white" style="width: 55px" type="text"
+                    <input class="text-center rounded border-white" style="width: 90%" type="text"
                       formControlName="matematicas" (input)="validateNumber($event)">
                   </td>
                   <td>
-                    <input class="text-center  rounded border-white" style="width: 55px" type="text"
+                    <input class="text-center rounded border-white" style="width: 90%" type="text"
                       formControlName="ingles" (input)="validateNumber($event)">
                   </td>
                   <td>

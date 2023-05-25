@@ -28,22 +28,22 @@
               <tr *ngFor="let career of careers; let i= index">
                 <td>{{ career.title }}</td>
                 <!-- <td contenteditable="true" (input)="updateCellValue($event, 'lecturaCritica', career)">{{ career.lecturaCritica }}</td> -->
-                <td><input class="rounded border-0 text-center px-2 py-1" type="number"
-                    formControlName="lecturaCritica{{i + 1}}" style="width: 55px;" (input)="validateNumber($event)"></td>
-                <td><input class="rounded border-0 text-center px-2 py-1" type="number"
-                    formControlName="cienciasNaturales{{i + 1}}" style="width: 55px;" (input)="validateNumber($event)"></td>
-                <td><input class="rounded border-0 text-center px-2 py-1" type="number"
-                    formControlName="cienciasSociales{{i + 1}}" style="width: 55px;" (input)="validateNumber($event)"></td>
-                <td><input class="rounded border-0 text-center px-2 py-1" type="number"
-                    formControlName="matematicas{{i + 1}}" style="width: 55px;" (input)="validateNumber($event)"></td>
-                <td><input class="rounded border-0 text-center px-2 py-1" type="number"
-                    formControlName="ingles{{i + 1}}" style="width: 55px;" (input)="validateNumber($event)"></td>
-                <td><input class="rounded border-0 text-center px-2 py-1" type="number"
-                    formControlName="puntajePonderado{{i + 1}}" style="width: 55px;" (input)="validateNumber($event)"></td>
-                <td><input class="rounded border-0 text-center px-2 py-1" type="number"
-                    formControlName="puntaCorte1{{i + 1}}" style="width: 55px;" (input)="validateNumber($event)"></td>
-                <td><input class="rounded border-0 text-center px-2 py-1" type="number"
-                    formControlName="puntaCorte2{{i + 1}}" style="width: 55px;" (input)="validateNumber($event)"></td>
+                <td><input class="rounded border-white text-center " type="number"
+                    formControlName="lecturaCritica{{i + 1}}" style="width: 90%;" (input)="validateNumber($event)"></td>
+                <td><input class="rounded border-white text-center " type="number"
+                    formControlName="cienciasNaturales{{i + 1}}" style="width: 90%;" (input)="validateNumber($event)"></td>
+                <td><input class="rounded border-white text-center " type="number"
+                    formControlName="cienciasSociales{{i + 1}}" style="width: 90%;" (input)="validateNumber($event)"></td>
+                <td><input class="rounded border-white text-center " type="number"
+                    formControlName="matematicas{{i + 1}}" style="width: 90%;" (input)="validateNumber($event)"></td>
+                <td><input class="rounded border-white text-center " type="number"
+                    formControlName="ingles{{i + 1}}" style="width: 90%;" (input)="validateNumber($event)"></td>
+                <td><input class="rounded border-white text-center " type="number"
+                    formControlName="puntajePonderado{{i + 1}}" style="width: 90%;" (input)="validateNumber($event)"></td>
+                <td><input class="rounded border-white text-center " type="number"
+                    formControlName="puntaCorte1{{i + 1}}" style="width: 90%;" (input)="validateNumber($event)"></td>
+                <td><input class="rounded border-white text-center " type="number"
+                    formControlName="puntaCorte2{{i + 1}}" style="width: 90%;" (input)="validateNumber($event)"></td>
                 <td>
                   <span class="table-remove"><button type="button" class="btn btn-warning btn-rounded text-dark btn-sm my-0"
                       (click)="updateCareer(career, i)">Editar</button>

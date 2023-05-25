@@ -1,7 +1,5 @@
 node_modules
-
 # Archivos de configuración de npm
-package-lock.json
 npm-debug.log
 yarn.lock
 
@@ -10,6 +8,3 @@ yarn.lock
 .angular-cli.json
 .angular-cli.json_
 .angular-config.json
-angular.json
-
-

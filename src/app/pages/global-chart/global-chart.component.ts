@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { Chart } from 'chart.js';
 import { AdminService } from 'src/app/services/admin.service';
 import Swal from 'sweetalert2';
+import { filter } from 'rxjs/operators';
+
+
 
 @Component({
   selector: 'app-global-chart',
@@ -24,6 +27,11 @@ export class GlobalChartComponent {
 
   ngOnInit() {
     this.getGlobalData();
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        window.scrollTo(0, 0);
+      });
   }
 
   getGlobalData() {

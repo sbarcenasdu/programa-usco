@@ -3,12 +3,9 @@
     <div class="mb-3">
       <label for="searchInput" class="form-label">Buscar resultados por número de documento:</label>
       <div class="d-flex flex-row">
-        <input type="text" class="form-control" style="width: 220px;" [(ngModel)]="searchTerm" id="searchInput">
+        <input type="text" class="form-control" style="width: 220px;" [(ngModel)]="searchTerm" id="searchInput" (keyup.enter)="searchData()">
         <button type="submit" class="mx-2 btn btn-primary" (click)="searchData()">Buscar</button>
       </div>
     </div>
-
-
-
   </div>
 </div>
