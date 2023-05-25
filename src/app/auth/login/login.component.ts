@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginGuard } from 'src/app/guards/check-login.guard';
 import { AuthService } from 'src/app/services/auth.service';
 import Swal from 'sweetalert2';
 
